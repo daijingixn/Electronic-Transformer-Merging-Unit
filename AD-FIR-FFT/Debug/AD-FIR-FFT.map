@@ -1,0 +1,2355 @@
+******************************************************************************
+             TMS320C2000 Linker PC v6.2.0                      
+******************************************************************************
+>> Linked Thu Mar 14 10:01:33 2019
+
+OUTPUT FILE NAME:   <AD-FIR-FFT.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00009638
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  BEGIN                 00000000   00000002  00000002  00000000  RWIX
+  BOOT_RSVD             00000002   0000004e  00000000  0000004e  RWIX
+  RAMM0                 00000050   000003b0  00000000  000003b0  RWIX
+  RAML                  00008000   00004000  00001828  000027d8  RWIX
+  ZONE7A                00200000   0000fc00  00000000  0000fc00  RWIX
+  CSM_RSVD              0033ff80   00000076  00000000  00000076  RWIX
+  CSM_PWL               0033fff8   00000008  00000000  00000008  RWIX
+  ADC_CAL               00380080   00000009  00000000  00000009  RWIX
+  IQTABLES              003fe000   00000b50  00000000  00000b50  RWIX
+  IQTABLES2             003feb50   0000008c  00000000  0000008c  RWIX
+  FPUTABLES             003febdc   000006a0  00000000  000006a0  RWIX
+  BOOTROM               003ff27c   00000d44  00000000  00000d44  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+
+PAGE 1:
+  RAMM                  00000400   00000400  00000300  00000100  RWIX
+  DEV_EMU               00000880   00000180  000000d0  000000b0  RWIX
+  FLASH_REGS            00000a80   00000060  00000008  00000058  RWIX
+  CSM                   00000ae0   00000010  00000010  00000000  RWIX
+  ADC_MIRROR            00000b00   00000010  00000010  00000000  RWIX
+  XINTF                 00000b20   00000020  0000001e  00000002  RWIX
+  CPU_TIMER0            00000c00   00000008  00000008  00000000  RWIX
+  CPU_TIMER1            00000c08   00000008  00000008  00000000  RWIX
+  CPU_TIMER2            00000c10   00000008  00000008  00000000  RWIX
+  PIE_CTRL              00000ce0   00000020  0000001a  00000006  RWIX
+  PIE_VECT              00000d00   00000100  00000100  00000000  RWIX
+  DMA                   00001000   00000200  000000e0  00000120  RWIX
+  MCBSPA                00005000   00000040  00000025  0000001b  RWIX
+  MCBSPB                00005040   00000040  00000025  0000001b  RWIX
+  ECANA                 00006000   00000040  00000034  0000000c  RWIX
+  ECANA_LAM             00006040   00000040  00000040  00000000  RWIX
+  ECANA_MOTS            00006080   00000040  00000040  00000000  RWIX
+  ECANA_MOTO            000060c0   00000040  00000040  00000000  RWIX
+  ECANA_MBOX            00006100   00000100  00000100  00000000  RWIX
+  ECANB                 00006200   00000040  00000034  0000000c  RWIX
+  ECANB_LAM             00006240   00000040  00000040  00000000  RWIX
+  ECANB_MOTS            00006280   00000040  00000040  00000000  RWIX
+  ECANB_MOTO            000062c0   00000040  00000040  00000000  RWIX
+  ECANB_MBOX            00006300   00000100  00000100  00000000  RWIX
+  EPWM1                 00006800   00000022  00000022  00000000  RWIX
+  EPWM2                 00006840   00000022  00000022  00000000  RWIX
+  EPWM3                 00006880   00000022  00000022  00000000  RWIX
+  EPWM4                 000068c0   00000022  00000022  00000000  RWIX
+  EPWM5                 00006900   00000022  00000022  00000000  RWIX
+  EPWM6                 00006940   00000022  00000022  00000000  RWIX
+  ECAP1                 00006a00   00000020  00000020  00000000  RWIX
+  ECAP2                 00006a20   00000020  00000020  00000000  RWIX
+  ECAP3                 00006a40   00000020  00000020  00000000  RWIX
+  ECAP4                 00006a60   00000020  00000020  00000000  RWIX
+  ECAP5                 00006a80   00000020  00000020  00000000  RWIX
+  ECAP6                 00006aa0   00000020  00000020  00000000  RWIX
+  EQEP1                 00006b00   00000040  00000040  00000000  RWIX
+  EQEP2                 00006b40   00000040  00000040  00000000  RWIX
+  GPIOCTRL              00006f80   00000040  0000002e  00000012  RWIX
+  GPIODAT               00006fc0   00000020  00000020  00000000  RWIX
+  GPIOINT               00006fe0   00000020  0000000a  00000016  RWIX
+  SYSTEM                00007010   00000020  00000020  00000000  RWIX
+  SPIA                  00007040   00000010  00000010  00000000  RWIX
+  SCIA                  00007050   00000010  00000010  00000000  RWIX
+  XINTRUPT              00007070   00000010  00000010  00000000  RWIX
+  ADC                   00007100   00000020  0000001e  00000002  RWIX
+  SCIB                  00007750   00000010  00000010  00000000  RWIX
+  SCIC                  00007770   00000010  00000010  00000000  RWIX
+  I2CA                  00007900   00000040  00000022  0000001e  RWIX
+  RAMH                  0000c000   00004000  00001e3a  000021c6  RWIX
+  ZONE7B                00200000   00005000  0000000a  00004ff6  RWIX
+  ZONE7A                00205010   00040000  00000000  00040000  RWIX
+  CSM_PWL               0033fff8   00000008  00000008  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+codestart 
+*          0    00000000    00000002     
+                  00000000    00000002     DSP2833x_CodeStartBranch.obj (codestart)
+
+.pinit     0    00008000    00000000     UNINITIALIZED
+
+.text      0    00008000    0000172c     
+                  00008000    000004f1     CH395.obj (.text)
+                  000084f1    000003f4     user_main.obj (.text)
+                  000088e5    00000316     DSP2833x_DefaultIsr.obj (.text:retain)
+                  00008bfb    000002b2     DSP2833x_InitPeripherals.obj (.text)
+                  00008ead    00000229     DSP2833x_Gpio.obj (.text)
+                  000090d6    0000014f     user_main.obj (.text:retain)
+                  00009225    000000f6     DSP2833x_Xintf.obj (.text)
+                  0000931b    000000f1     DSP2833x_SysCtrl.obj (.text)
+                  0000940c    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
+                  00009494    00000077     fir_proc.obj (.text)
+                  0000950b    00000074     DSP2833x_CpuTimers.obj (.text)
+                  0000957f    00000061     rts2800_fpu32.lib : cos.obj (.text)
+                  000095e0    00000058                       : sin.obj (.text)
+                  00009638    00000046                       : boot.obj (.text)
+                  0000967e    00000028     DSP2833x_PieCtrl.obj (.text)
+                  000096a6    00000023     rts2800_fpu32.lib : sqrt.obj (.text)
+                  000096c9    00000020     DSP2833x_PieVect.obj (.text)
+                  000096e9    00000019     rts2800_fpu32.lib : args_main.obj (.text)
+                  00009702    00000019                       : exit.obj (.text)
+                  0000971b    00000009                       : _lock.obj (.text)
+                  00009724    00000008     DSP2833x_CodeStartBranch.obj (.text)
+
+.cinit     0    0000972c    000000f8     
+                  0000972c    00000090     user_main.obj (.cinit)
+                  000097bc    0000004e     fir_proc.obj (.cinit)
+                  0000980a    0000000a     rts2800_fpu32.lib : _lock.obj (.cinit)
+                  00009814    0000000a                       : exit.obj (.cinit)
+                  0000981e    00000004                       : errno.obj (.cinit)
+                  00009822    00000002     --HOLE-- [fill = 0]
+
+ramfuncs   0    00009824    00000004     
+                  00009824    00000004     DSP2833x_usDelay.obj (ramfuncs)
+
+csm_rsvd   0    0033ff80    00000000     DSECT
+
+csmpasswds 
+*          0    0033fff8    00000000     DSECT
+
+.reset     0    003fffc0    00000002     DSECT
+                  003fffc0    00000002     rts2800_fpu32.lib : boot.obj (.reset)
+
+.stack     1    00000400    00000300     UNINITIALIZED
+                  00000400    00000300     --HOLE--
+
+DevEmuRegsFile 
+*          1    00000880    000000d0     UNINITIALIZED
+                  00000880    000000d0     DSP2833x_GlobalVariableDefs.obj (DevEmuRegsFile)
+
+FlashRegsFile 
+*          1    00000a80    00000008     UNINITIALIZED
+                  00000a80    00000008     DSP2833x_GlobalVariableDefs.obj (FlashRegsFile)
+
+CsmRegsFile 
+*          1    00000ae0    00000010     UNINITIALIZED
+                  00000ae0    00000010     DSP2833x_GlobalVariableDefs.obj (CsmRegsFile)
+
+AdcMirrorFile 
+*          1    00000b00    00000010     UNINITIALIZED
+                  00000b00    00000010     DSP2833x_GlobalVariableDefs.obj (AdcMirrorFile)
+
+XintfRegsFile 
+*          1    00000b20    0000001e     UNINITIALIZED
+                  00000b20    0000001e     DSP2833x_GlobalVariableDefs.obj (XintfRegsFile)
+
+CpuTimer0RegsFile 
+*          1    00000c00    00000008     UNINITIALIZED
+                  00000c00    00000008     DSP2833x_GlobalVariableDefs.obj (CpuTimer0RegsFile)
+
+CpuTimer1RegsFile 
+*          1    00000c08    00000008     UNINITIALIZED
+                  00000c08    00000008     DSP2833x_GlobalVariableDefs.obj (CpuTimer1RegsFile)
+
+CpuTimer2RegsFile 
+*          1    00000c10    00000008     UNINITIALIZED
+                  00000c10    00000008     DSP2833x_GlobalVariableDefs.obj (CpuTimer2RegsFile)
+
+PieCtrlRegsFile 
+*          1    00000ce0    0000001a     UNINITIALIZED
+                  00000ce0    0000001a     DSP2833x_GlobalVariableDefs.obj (PieCtrlRegsFile)
+
+PieVectTableFile 
+*          1    00000d00    00000100     UNINITIALIZED
+                  00000d00    00000100     DSP2833x_GlobalVariableDefs.obj (PieVectTableFile)
+
+DmaRegsFile 
+*          1    00001000    000000e0     UNINITIALIZED
+                  00001000    000000e0     DSP2833x_GlobalVariableDefs.obj (DmaRegsFile)
+
+McbspaRegsFile 
+*          1    00005000    00000025     UNINITIALIZED
+                  00005000    00000025     DSP2833x_GlobalVariableDefs.obj (McbspaRegsFile)
+
+McbspbRegsFile 
+*          1    00005040    00000025     UNINITIALIZED
+                  00005040    00000025     DSP2833x_GlobalVariableDefs.obj (McbspbRegsFile)
+
+ECanaRegsFile 
+*          1    00006000    00000034     UNINITIALIZED
+                  00006000    00000034     DSP2833x_GlobalVariableDefs.obj (ECanaRegsFile)
+
+ECanaLAMRegsFile 
+*          1    00006040    00000040     UNINITIALIZED
+                  00006040    00000040     DSP2833x_GlobalVariableDefs.obj (ECanaLAMRegsFile)
+
+ECanaMOTSRegsFile 
+*          1    00006080    00000040     UNINITIALIZED
+                  00006080    00000040     DSP2833x_GlobalVariableDefs.obj (ECanaMOTSRegsFile)
+
+ECanaMOTORegsFile 
+*          1    000060c0    00000040     UNINITIALIZED
+                  000060c0    00000040     DSP2833x_GlobalVariableDefs.obj (ECanaMOTORegsFile)
+
+ECanaMboxesFile 
+*          1    00006100    00000100     UNINITIALIZED
+                  00006100    00000100     DSP2833x_GlobalVariableDefs.obj (ECanaMboxesFile)
+
+ECanbRegsFile 
+*          1    00006200    00000034     UNINITIALIZED
+                  00006200    00000034     DSP2833x_GlobalVariableDefs.obj (ECanbRegsFile)
+
+ECanbLAMRegsFile 
+*          1    00006240    00000040     UNINITIALIZED
+                  00006240    00000040     DSP2833x_GlobalVariableDefs.obj (ECanbLAMRegsFile)
+
+ECanbMOTSRegsFile 
+*          1    00006280    00000040     UNINITIALIZED
+                  00006280    00000040     DSP2833x_GlobalVariableDefs.obj (ECanbMOTSRegsFile)
+
+ECanbMOTORegsFile 
+*          1    000062c0    00000040     UNINITIALIZED
+                  000062c0    00000040     DSP2833x_GlobalVariableDefs.obj (ECanbMOTORegsFile)
+
+ECanbMboxesFile 
+*          1    00006300    00000100     UNINITIALIZED
+                  00006300    00000100     DSP2833x_GlobalVariableDefs.obj (ECanbMboxesFile)
+
+EPwm1RegsFile 
+*          1    00006800    00000022     UNINITIALIZED
+                  00006800    00000022     DSP2833x_GlobalVariableDefs.obj (EPwm1RegsFile)
+
+EPwm2RegsFile 
+*          1    00006840    00000022     UNINITIALIZED
+                  00006840    00000022     DSP2833x_GlobalVariableDefs.obj (EPwm2RegsFile)
+
+EPwm3RegsFile 
+*          1    00006880    00000022     UNINITIALIZED
+                  00006880    00000022     DSP2833x_GlobalVariableDefs.obj (EPwm3RegsFile)
+
+EPwm4RegsFile 
+*          1    000068c0    00000022     UNINITIALIZED
+                  000068c0    00000022     DSP2833x_GlobalVariableDefs.obj (EPwm4RegsFile)
+
+EPwm5RegsFile 
+*          1    00006900    00000022     UNINITIALIZED
+                  00006900    00000022     DSP2833x_GlobalVariableDefs.obj (EPwm5RegsFile)
+
+EPwm6RegsFile 
+*          1    00006940    00000022     UNINITIALIZED
+                  00006940    00000022     DSP2833x_GlobalVariableDefs.obj (EPwm6RegsFile)
+
+ECap1RegsFile 
+*          1    00006a00    00000020     UNINITIALIZED
+                  00006a00    00000020     DSP2833x_GlobalVariableDefs.obj (ECap1RegsFile)
+
+ECap2RegsFile 
+*          1    00006a20    00000020     UNINITIALIZED
+                  00006a20    00000020     DSP2833x_GlobalVariableDefs.obj (ECap2RegsFile)
+
+ECap3RegsFile 
+*          1    00006a40    00000020     UNINITIALIZED
+                  00006a40    00000020     DSP2833x_GlobalVariableDefs.obj (ECap3RegsFile)
+
+ECap4RegsFile 
+*          1    00006a60    00000020     UNINITIALIZED
+                  00006a60    00000020     DSP2833x_GlobalVariableDefs.obj (ECap4RegsFile)
+
+ECap5RegsFile 
+*          1    00006a80    00000020     UNINITIALIZED
+                  00006a80    00000020     DSP2833x_GlobalVariableDefs.obj (ECap5RegsFile)
+
+ECap6RegsFile 
+*          1    00006aa0    00000020     UNINITIALIZED
+                  00006aa0    00000020     DSP2833x_GlobalVariableDefs.obj (ECap6RegsFile)
+
+EQep1RegsFile 
+*          1    00006b00    00000040     UNINITIALIZED
+                  00006b00    00000040     DSP2833x_GlobalVariableDefs.obj (EQep1RegsFile)
+
+EQep2RegsFile 
+*          1    00006b40    00000040     UNINITIALIZED
+                  00006b40    00000040     DSP2833x_GlobalVariableDefs.obj (EQep2RegsFile)
+
+GpioCtrlRegsFile 
+*          1    00006f80    0000002e     UNINITIALIZED
+                  00006f80    0000002e     DSP2833x_GlobalVariableDefs.obj (GpioCtrlRegsFile)
+
+GpioDataRegsFile 
+*          1    00006fc0    00000020     UNINITIALIZED
+                  00006fc0    00000020     DSP2833x_GlobalVariableDefs.obj (GpioDataRegsFile)
+
+GpioIntRegsFile 
+*          1    00006fe0    0000000a     UNINITIALIZED
+                  00006fe0    0000000a     DSP2833x_GlobalVariableDefs.obj (GpioIntRegsFile)
+
+SysCtrlRegsFile 
+*          1    00007010    00000020     UNINITIALIZED
+                  00007010    00000020     DSP2833x_GlobalVariableDefs.obj (SysCtrlRegsFile)
+
+SpiaRegsFile 
+*          1    00007040    00000010     UNINITIALIZED
+                  00007040    00000010     DSP2833x_GlobalVariableDefs.obj (SpiaRegsFile)
+
+SciaRegsFile 
+*          1    00007050    00000010     UNINITIALIZED
+                  00007050    00000010     DSP2833x_GlobalVariableDefs.obj (SciaRegsFile)
+
+XIntruptRegsFile 
+*          1    00007070    00000010     UNINITIALIZED
+                  00007070    00000010     DSP2833x_GlobalVariableDefs.obj (XIntruptRegsFile)
+
+AdcRegsFile 
+*          1    00007100    0000001e     UNINITIALIZED
+                  00007100    0000001e     DSP2833x_GlobalVariableDefs.obj (AdcRegsFile)
+
+ScibRegsFile 
+*          1    00007750    00000010     UNINITIALIZED
+                  00007750    00000010     DSP2833x_GlobalVariableDefs.obj (ScibRegsFile)
+
+ScicRegsFile 
+*          1    00007770    00000010     UNINITIALIZED
+                  00007770    00000010     DSP2833x_GlobalVariableDefs.obj (ScicRegsFile)
+
+I2caRegsFile 
+*          1    00007900    00000022     UNINITIALIZED
+                  00007900    00000022     DSP2833x_GlobalVariableDefs.obj (I2caRegsFile)
+
+.ebss      1    0000c000    00001c80     UNINITIALIZED
+                  0000c000    00001b2c     user_main.obj (.ebss)
+                  0000db2c    00000004     rts2800_fpu32.lib : _lock.obj (.ebss)
+                  0000db30    00000004                       : exit.obj (.ebss)
+                  0000db34    00000001                       : errno.obj (.ebss)
+                  0000db35    0000000b     --HOLE--
+                  0000db40    000000a4     CH395.obj (.ebss)
+                  0000dbe4    00000018     DSP2833x_CpuTimers.obj (.ebss)
+                  0000dbfc    00000004     --HOLE--
+                  0000dc00    00000080     fir_proc.obj (.ebss)
+
+.econst    1    0000dc80    000001ba     
+                  0000dc80    00000100     DSP2833x_PieVect.obj (.econst)
+                  0000dd80    00000020     user_main.obj (.econst:_$P$T0$1)
+                  0000dda0    00000020     user_main.obj (.econst:_$P$T1$2)
+                  0000ddc0    00000020     user_main.obj (.econst:_$P$T4$5)
+                  0000dde0    00000020     user_main.obj (.econst:_$P$T5$6)
+                  0000de00    00000018     user_main.obj (.econst:_$P$T3$4)
+                  0000de18    0000000c     CH395.obj (.econst:.string)
+                  0000de24    00000004     CH395.obj (.econst:.string:_CH395GWIPAddr)
+                  0000de28    00000004     CH395.obj (.econst:.string:_CH395IPAddr)
+                  0000de2c    00000004     CH395.obj (.econst:.string:_CH395IPMask)
+                  0000de30    00000004     CH395.obj (.econst:.string:_Socket0DesIP)
+                  0000de34    00000002     user_main.obj (.econst:.string)
+                  0000de36    00000002     CH395.obj (.econst)
+                  0000de38    00000002     user_main.obj (.econst:_$P$T2$3)
+
+ZONE7DATA1 
+*          1    00200000    0000000a     UNINITIALIZED
+                  00200000    0000000a     user_main.obj (ZONE7DATA1)
+
+CsmPwlFile 
+*          1    0033fff8    00000008     UNINITIALIZED
+                  0033fff8    00000008     DSP2833x_GlobalVariableDefs.obj (CsmPwlFile)
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+00000880      22 (00000880)     _DevEmuRegs
+
+00000a80      2a (00000a80)     _FlashRegs
+
+00000ae0      2b (00000ac0)     _CsmRegs
+
+00000b00      2c (00000b00)     _AdcMirror
+00000b20      2c (00000b00)     _XintfRegs
+
+00000c00      30 (00000c00)     _CpuTimer0Regs
+00000c08      30 (00000c00)     _CpuTimer1Regs
+00000c10      30 (00000c00)     _CpuTimer2Regs
+
+00000ce0      33 (00000cc0)     _PieCtrlRegs
+
+00000d00      34 (00000d00)     _PieVectTable
+
+00001000      40 (00001000)     _DmaRegs
+
+00005000     140 (00005000)     _McbspaRegs
+
+00005040     141 (00005040)     _McbspbRegs
+
+00006000     180 (00006000)     _ECanaRegs
+
+00006040     181 (00006040)     _ECanaLAMRegs
+
+00006080     182 (00006080)     _ECanaMOTSRegs
+
+000060c0     183 (000060c0)     _ECanaMOTORegs
+
+00006100     184 (00006100)     _ECanaMboxes
+
+00006200     188 (00006200)     _ECanbRegs
+
+00006240     189 (00006240)     _ECanbLAMRegs
+
+00006280     18a (00006280)     _ECanbMOTSRegs
+
+000062c0     18b (000062c0)     _ECanbMOTORegs
+
+00006300     18c (00006300)     _ECanbMboxes
+
+00006800     1a0 (00006800)     _EPwm1Regs
+
+00006840     1a1 (00006840)     _EPwm2Regs
+
+00006880     1a2 (00006880)     _EPwm3Regs
+
+000068c0     1a3 (000068c0)     _EPwm4Regs
+
+00006900     1a4 (00006900)     _EPwm5Regs
+
+00006940     1a5 (00006940)     _EPwm6Regs
+
+00006a00     1a8 (00006a00)     _ECap1Regs
+00006a20     1a8 (00006a00)     _ECap2Regs
+
+00006a40     1a9 (00006a40)     _ECap3Regs
+00006a60     1a9 (00006a40)     _ECap4Regs
+
+00006a80     1aa (00006a80)     _ECap5Regs
+00006aa0     1aa (00006a80)     _ECap6Regs
+
+00006b00     1ac (00006b00)     _EQep1Regs
+
+00006b40     1ad (00006b40)     _EQep2Regs
+
+00006f80     1be (00006f80)     _GpioCtrlRegs
+
+00006fc0     1bf (00006fc0)     _GpioDataRegs
+00006fe0     1bf (00006fc0)     _GpioIntRegs
+
+00007010     1c0 (00007000)     _SysCtrlRegs
+
+00007040     1c1 (00007040)     _SpiaRegs
+00007050     1c1 (00007040)     _SciaRegs
+00007070     1c1 (00007040)     _XIntruptRegs
+
+00007100     1c4 (00007100)     _AdcRegs
+
+00007750     1dd (00007740)     _ScibRegs
+00007770     1dd (00007740)     _ScicRegs
+
+00007900     1e4 (00007900)     _I2caRegs
+
+0000c000     300 (0000c000)     __BA_ENPRUQ2
+0000c001     300 (0000c000)     __BA_ENPRUD2
+0000c002     300 (0000c000)     __BA_ESPEED
+0000c003     300 (0000c000)     __BA_EFREQ
+0000c004     300 (0000c000)     __BA_ENPRUQ
+0000c005     300 (0000c000)     __BA_ETC1
+0000c006     300 (0000c000)     __BA_ETB1
+0000c007     300 (0000c000)     __BA_ETB2
+0000c008     300 (0000c000)     __BA_ETA2
+0000c009     300 (0000c000)     __BA_ENUDOUT
+0000c00a     300 (0000c000)     __BA_ENPRUD
+0000c00b     300 (0000c000)     __BA_ETA1
+0000c00c     300 (0000c000)     __BA_EIB2
+0000c00d     300 (0000c000)     __BA_EIA2
+0000c00e     300 (0000c000)     __BA_EUAB1
+0000c00f     300 (0000c000)     __BA_EIB1
+0000c010     300 (0000c000)     __BA_EIA1
+0000c011     300 (0000c000)     __BA_EIC2
+0000c012     300 (0000c000)     __BA_EUAB0
+0000c013     300 (0000c000)     __BA_EUBC2
+0000c014     300 (0000c000)     __BA_ENUQOUT
+0000c015     300 (0000c000)     __BA_EUBC1
+0000c016     300 (0000c000)     __BA_EIC1
+0000c017     300 (0000c000)     __BA_EUBC0
+0000c018     300 (0000c000)     __BA_EPGRID
+0000c019     300 (0000c000)     __BA_EPNPR
+0000c01a     300 (0000c000)     __BA_TIME4_1
+0000c01b     300 (0000c000)     __BA_ETOQFB
+0000c01c     300 (0000c000)     __BA_ESTAIBA
+0000c01d     300 (0000c000)     __BA_TIME4_0
+0000c01e     300 (0000c000)     __BA_TIME4_5
+0000c01f     300 (0000c000)     __BA_TIME4_4
+0000c020     300 (0000c000)     __BA_TIME3_1
+0000c021     300 (0000c000)     __BA_TIME4_2
+0000c022     300 (0000c000)     __BA_EPSTA
+0000c023     300 (0000c000)     __BA_TIME3_0
+0000c024     300 (0000c000)     __BA_EPIONIQ
+0000c025     300 (0000c000)     __BA_EPIONID
+0000c026     300 (0000c000)     __BA_EPIOMID
+0000c027     300 (0000c000)     __BA_ETC2
+0000c028     300 (0000c000)     __BA_EUAB2
+0000c029     300 (0000c000)     __BA_EMEXI
+0000c02a     300 (0000c000)     __BA_ETSKIIP
+0000c02b     300 (0000c000)     __BA_ETLDUDT
+0000c02c     300 (0000c000)     __BA_TIME4_3
+0000c02d     300 (0000c000)     __BA_EPIOMIQ
+0000c02e     300 (0000c000)     __BA_EPIONU
+0000c02f     300 (0000c000)     __BA_ESTAIAC
+0000c030     300 (0000c000)     __MPR_IQ_incrementmax
+0000c031     300 (0000c000)     __MPR_IQ_errmin
+0000c032     300 (0000c000)     __DYN_U_Ki
+0000c033     300 (0000c000)     __MPR_IQ_outmax
+0000c034     300 (0000c000)     __MPR_IQ_Kd
+0000c035     300 (0000c000)     __DYN_U_Kp
+0000c036     300 (0000c000)     __DYN_U_errmin
+0000c037     300 (0000c000)     __DYN_U_errmax
+0000c038     300 (0000c000)     __SC_RTRN
+0000c039     300 (0000c000)     __DYN_U_Kd
+0000c03a     300 (0000c000)     __MPR_IQ_errmax
+0000c03b     300 (0000c000)     __DYN_U_incrementmax
+0000c03c     300 (0000c000)     __MPR_ID_Ki
+0000c03d     300 (0000c000)     __MPR_ID_Kp
+0000c03e     300 (0000c000)     __MPR_ID_outmax
+0000c03f     300 (0000c000)     __MPR_U_errmin
+
+0000c040     301 (0000c040)     __MPR_U_errmax
+0000c041     301 (0000c040)     __MPR_ID_Kd
+0000c042     301 (0000c040)     __MPR_IQ_Kp
+0000c043     301 (0000c040)     __MPR_ID_incrementmax
+0000c044     301 (0000c040)     __DYN_U_outmax
+0000c045     301 (0000c040)     __MPR_ID_errmax
+0000c046     301 (0000c040)     __MPR_U_incrementmax
+0000c047     301 (0000c040)     __MPR_IQ_Ki
+0000c048     301 (0000c040)     __BA_ERR1
+0000c049     301 (0000c040)     __BA_ERR2
+0000c04a     301 (0000c040)     __BA_ENIQRF
+0000c04b     301 (0000c040)     __BA_ERR4
+0000c04c     301 (0000c040)     __SC_IACOVST
+0000c04d     301 (0000c040)     __BA_ENIDRF
+0000c04e     301 (0000c040)     __BA_EUDC
+0000c04f     301 (0000c040)     __BA_EURF
+0000c050     301 (0000c040)     __BA_ETLAC
+0000c051     301 (0000c040)     __BA_EMIQRF
+0000c052     301 (0000c040)     __BA_ERR3
+0000c053     301 (0000c040)     __BA_EAGLRF
+0000c054     301 (0000c040)     __SC_UDCOVH
+0000c055     301 (0000c040)     __SC_UDCOV
+0000c056     301 (0000c040)     __SC_VDCON
+0000c057     301 (0000c040)     __SC_RTRT
+0000c058     301 (0000c040)     __MPR_ID_errmin
+0000c059     301 (0000c040)     __SC_UDCLV
+0000c05a     301 (0000c040)     __SC_PGOV
+0000c05b     301 (0000c040)     __SC_IACOV2
+0000c05c     301 (0000c040)     __BA_ETOQRF
+0000c05d     301 (0000c040)     __SC_UACOV1
+0000c05e     301 (0000c040)     __SC_IACOV1
+0000c05f     301 (0000c040)     __SC_QGOV
+0000c060     301 (0000c040)     __SC_UACLV1
+0000c061     301 (0000c040)     __BA_STAIAC
+0000c062     301 (0000c040)     __BA_STAUBCD
+0000c063     301 (0000c040)     __BA_PSTA
+0000c064     301 (0000c040)     __BA_TMSKIIP
+0000c065     301 (0000c040)     __BA_TNSKIIP
+0000c066     301 (0000c040)     __BA_STAIBA
+0000c067     301 (0000c040)     __BA_QNPR
+0000c068     301 (0000c040)     __BA_QSTA
+0000c069     301 (0000c040)     __BA_SSTA
+0000c06a     301 (0000c040)     __BA_PNPR
+0000c06b     301 (0000c040)     __BA_STAUABD
+0000c06c     301 (0000c040)     __BA_QGRID
+0000c06d     301 (0000c040)     __BA_STAUD
+0000c06e     301 (0000c040)     __BA_GRDUQ
+0000c06f     301 (0000c040)     __BA_STAID
+0000c070     301 (0000c040)     __BA_PIOMIQ
+0000c071     301 (0000c040)     __BA_PIOMID
+0000c072     301 (0000c040)     __BA_STAUQ
+0000c073     301 (0000c040)     __BA_TLAC
+0000c074     301 (0000c040)     __BA_EXCIQ
+0000c075     301 (0000c040)     __BA_PGRID
+0000c076     301 (0000c040)     __BA_STAIQ
+0000c077     301 (0000c040)     __BA_GRDUD
+0000c078     301 (0000c040)     __BA_TLDUDT
+0000c079     301 (0000c040)     __BA_LEDB
+0000c07a     301 (0000c040)     __BA_LEDV
+0000c07b     301 (0000c040)     _zys2
+0000c07c     301 (0000c040)     __SC_UDSTAC
+0000c07d     301 (0000c040)     __SC_MSPEED2
+0000c07e     301 (0000c040)     _zys1
+0000c07f     301 (0000c040)     _interruptnumber
+
+0000c080     302 (0000c080)     _zsector
+0000c082     302 (0000c080)     _zys3
+0000c083     302 (0000c080)     __SCIB_BAUD
+0000c084     302 (0000c080)     _temp
+0000c085     302 (0000c080)     __SC_MPR_TLOV
+0000c086     302 (0000c080)     __SC_NPR_TLOV
+0000c087     302 (0000c080)     __SC_LVUDC2
+0000c088     302 (0000c080)     __BA_SNPR
+0000c089     302 (0000c080)     __BA_EXCID
+0000c08a     302 (0000c080)     __SC_LVUDC1
+0000c08b     302 (0000c080)     __SC_MPR_UQ
+0000c08c     302 (0000c080)     __SC_MPR_UD
+0000c08d     302 (0000c080)     _zys4
+0000c08e     302 (0000c080)     __SC_LVIAC2
+0000c08f     302 (0000c080)     __BA_SGRID
+0000c090     302 (0000c080)     __SC_MSPEED1
+0000c091     302 (0000c080)     __BA_MIDRF
+0000c092     302 (0000c080)     __BA_TIME1_5
+0000c093     302 (0000c080)     __BA_MIQRF
+0000c094     302 (0000c080)     __BA_TIME1_3
+0000c095     302 (0000c080)     __BA_TIME1_2
+0000c096     302 (0000c080)     __BA_NIQRF
+0000c097     302 (0000c080)     __BA_URF
+0000c098     302 (0000c080)     __BA_TOQFB
+0000c099     302 (0000c080)     __BA_IA1
+0000c09a     302 (0000c080)     __BA_TOQRF
+0000c09b     302 (0000c080)     __BA_TIME1_4
+0000c09c     302 (0000c080)     __BA_UDC
+0000c09d     302 (0000c080)     __BA_TIME2_0
+0000c09e     302 (0000c080)     __BA_TIME3_5
+0000c09f     302 (0000c080)     __BA_TIME2_2
+0000c0a0     302 (0000c080)     __BA_TIME3_3
+0000c0a1     302 (0000c080)     __BA_TIME3_2
+0000c0a2     302 (0000c080)     __BA_TIME2_1
+0000c0a3     302 (0000c080)     __BA_TIME1_0
+0000c0a4     302 (0000c080)     __BA_TIME2_5
+0000c0a5     302 (0000c080)     __BA_AGLRF
+0000c0a6     302 (0000c080)     __BA_TIME2_3
+0000c0a7     302 (0000c080)     __BA_TIME3_4
+0000c0a8     302 (0000c080)     __BA_TIME1_1
+0000c0a9     302 (0000c080)     __BA_TC1
+0000c0aa     302 (0000c080)     __BA_TB1
+0000c0ab     302 (0000c080)     __BA_TB2
+0000c0ac     302 (0000c080)     __BA_SPEED
+0000c0ad     302 (0000c080)     __BA_FREQ
+0000c0ae     302 (0000c080)     __BA_TA2
+0000c0af     302 (0000c080)     __BA_PIONIQ
+0000c0b0     302 (0000c080)     __BA_PIONID
+0000c0b1     302 (0000c080)     __SC_TSCRON
+0000c0b2     302 (0000c080)     __BA_TC2
+0000c0b3     302 (0000c080)     __BA_TA1
+0000c0b4     302 (0000c080)     __BA_MEXI
+0000c0b5     302 (0000c080)     __BA_IB2
+0000c0b6     302 (0000c080)     __BA_IA2
+0000c0b7     302 (0000c080)     __BA_UAB1
+0000c0b8     302 (0000c080)     __BA_IB1
+0000c0b9     302 (0000c080)     __BA_TIME2_4
+0000c0ba     302 (0000c080)     __BA_IC2
+0000c0bb     302 (0000c080)     __BA_UAB0
+0000c0bc     302 (0000c080)     __BA_UBC2
+0000c0bd     302 (0000c080)     __BA_PIONU
+0000c0be     302 (0000c080)     __BA_UBC1
+0000c0bf     302 (0000c080)     __BA_IC1
+
+0000c0c0     303 (0000c0c0)     __BA_UBC0
+0000c0c1     303 (0000c0c0)     __BA_UAB2
+0000c0c2     303 (0000c0c0)     __RU_TOQT
+0000c0c3     303 (0000c0c0)     __RU_IQT
+0000c0c4     303 (0000c0c0)     __RU_AGLT
+0000c0c5     303 (0000c0c0)     __MIDRF
+0000c0c6     303 (0000c0c0)     __NIDRF
+0000c0c7     303 (0000c0c0)     __NIQRF
+0000c0c8     303 (0000c0c0)     __DEADTIME
+0000c0c9     303 (0000c0c0)     __SW_FR
+0000c0ca     303 (0000c0c0)     __COMPTIME
+0000c0cb     303 (0000c0c0)     __RU_UDCT
+0000c0cc     303 (0000c0c0)     __MINONTIME
+0000c0cd     303 (0000c0c0)     __RU_IDT
+0000c0ce     303 (0000c0c0)     __RESET
+0000c0cf     303 (0000c0c0)     __SYSRUN
+0000c0d0     303 (0000c0c0)     __STDBY1
+0000c0d1     303 (0000c0c0)     __STDBY3
+0000c0d2     303 (0000c0c0)     __STDBY2
+0000c0d3     303 (0000c0c0)     __STDBY4
+0000c0d4     303 (0000c0c0)     __TOQRF
+0000c0d5     303 (0000c0c0)     __MIQRF
+0000c0d6     303 (0000c0c0)     __AGLRF
+0000c0d7     303 (0000c0c0)     __ENCODPOS
+0000c0d8     303 (0000c0c0)     __EIDCO
+0000c0d9     303 (0000c0c0)     _RAMDATA_POS
+0000c0da     303 (0000c0c0)     __MSG_SCOUT1
+0000c0db     303 (0000c0c0)     __NULL_VAL
+0000c0dc     303 (0000c0c0)     __MSG_SCOUT2
+0000c0dd     303 (0000c0c0)     __OUT_AMUX1
+0000c0de     303 (0000c0c0)     __OUT_AMUX2
+0000c0df     303 (0000c0c0)     __MC_REV
+0000c0e0     303 (0000c0c0)     __MC_TYPE
+0000c0e1     303 (0000c0c0)     __MC_DATE
+0000c0e2     303 (0000c0c0)     __SCIB_ADDR
+0000c0e3     303 (0000c0c0)     __MC_ID
+0000c0e4     303 (0000c0c0)     __EIN
+0000c0e5     303 (0000c0c0)     _RUN_mpriq
+0000c0e6     303 (0000c0c0)     __SY_RTRN
+0000c0e7     303 (0000c0c0)     __OUT3_TEST
+0000c0e8     303 (0000c0c0)     _SW_NPR
+0000c0e9     303 (0000c0c0)     __NQEPPCO
+0000c0ea     303 (0000c0c0)     __NPR_ID_Ki
+0000c0eb     303 (0000c0c0)     __NPR_ID_Kp
+0000c0ec     303 (0000c0c0)     __NPR_ID_Kd
+0000c0ed     303 (0000c0c0)     __NPR_ID_errmax
+0000c0ee     303 (0000c0c0)     __NPR_ID_outmax
+0000c0ef     303 (0000c0c0)     __NPR_ID_errmin
+0000c0f0     303 (0000c0c0)     __NPR_U_Kd
+0000c0f1     303 (0000c0c0)     __NPR_U_Ki
+0000c0f2     303 (0000c0c0)     __NPR_U_outmax
+0000c0f3     303 (0000c0c0)     __NPR_U_errmin
+0000c0f4     303 (0000c0c0)     __NPR_U_errmax
+0000c0f5     303 (0000c0c0)     __NPR_U_incrementmax
+0000c0f6     303 (0000c0c0)     __NPR_IQ_incrementmax
+0000c0f7     303 (0000c0c0)     __NPR_IQ_errmin
+0000c0f8     303 (0000c0c0)     __MPR_U_Kp
+0000c0f9     303 (0000c0c0)     __MPR_U_Kd
+0000c0fa     303 (0000c0c0)     __MPR_U_Ki
+0000c0fb     303 (0000c0c0)     __MPR_U_outmax
+0000c0fc     303 (0000c0c0)     __NPR_IQ_Kp
+0000c0fd     303 (0000c0c0)     __NPR_ID_incrementmax
+0000c0fe     303 (0000c0c0)     __NPR_IQ_Ki
+0000c0ff     303 (0000c0c0)     __NPR_IQ_outmax
+
+0000c100     304 (0000c100)     __NPR_IQ_Kd
+0000c101     304 (0000c100)     __STDBY5
+0000c102     304 (0000c100)     __SCOUTL
+0000c103     304 (0000c100)     __SCOUTH
+0000c104     304 (0000c100)     __STDBY7
+0000c105     304 (0000c100)     __STDBY6
+0000c106     304 (0000c100)     _SW_MPR
+0000c107     304 (0000c100)     __STDBY8
+0000c108     304 (0000c100)     __NPR_U_Kp
+0000c109     304 (0000c100)     __NPR_IQ_errmax
+0000c10a     304 (0000c100)     __CANOPER
+0000c10b     304 (0000c100)     __OPERATION
+0000c10c     304 (0000c100)     __AUTOCSTAC
+0000c10d     304 (0000c100)     __COMP2
+0000c10e     304 (0000c100)     __ENSCR
+0000c110     304 (0000c100)     _i_cnt2
+0000c112     304 (0000c100)     _i_cnt3
+0000c114     304 (0000c100)     _OCS_Trf
+0000c116     304 (0000c100)     _i_cnt1
+0000c118     304 (0000c100)     _MPPT_cnt
+0000c11a     304 (0000c100)     _GIVE_NPR_Id_pre
+0000c11c     304 (0000c100)     _cnt_Island_F
+0000c11e     304 (0000c100)     _cnt_Island_U
+0000c120     304 (0000c100)     _testtheta
+0000c122     304 (0000c100)     _zys
+0000c124     304 (0000c100)     _Pnactive_pre
+0000c126     304 (0000c100)     _MPPT_Pnactive
+0000c128     304 (0000c100)     _ub_m
+0000c12a     304 (0000c100)     _ua_m
+0000c12c     304 (0000c100)     _u_alfa_NPR
+0000c12e     304 (0000c100)     _uc_m
+0000c130     304 (0000c100)     _ET_SUM1
+0000c132     304 (0000c100)     _ET_SUM2
+0000c134     304 (0000c100)     _m
+0000c136     304 (0000c100)     _vdc
+0000c138     304 (0000c100)     _u_beta_NPR
+0000c13a     304 (0000c100)     _RUN_mpridrf_exi
+0000c13c     304 (0000c100)     _u_beta_MPR
+0000c13e     304 (0000c100)     _u_alfa_MPR
+
+0000c140     305 (0000c140)     _sum2
+0000c142     305 (0000c140)     __stdby01
+0000c144     305 (0000c140)     __stdby02
+0000c146     305 (0000c140)     _r_value3
+0000c148     305 (0000c140)     _sum1
+0000c14a     305 (0000c140)     _fSum
+0000c14c     305 (0000c140)     __encodpos
+0000c14e     305 (0000c140)     _DM_imrq
+0000c150     305 (0000c140)     _DM_imrd
+0000c152     305 (0000c140)     _Te_feedback
+0000c154     305 (0000c140)     _DM_Lr
+0000c156     305 (0000c140)     __eidco
+0000c158     305 (0000c140)     _POSCNT_TEST
+0000c15a     305 (0000c140)     _Pnreactive
+0000c15c     305 (0000c140)     _Pnactive
+0000c15e     305 (0000c140)     __stdby06
+0000c160     305 (0000c140)     __stdby07
+0000c162     305 (0000c140)     __stdby05
+0000c164     305 (0000c140)     _MPPT_Time
+0000c166     305 (0000c140)     __stdby08
+0000c168     305 (0000c140)     _MPPT_Id
+0000c16a     305 (0000c140)     __stdby04
+0000c16c     305 (0000c140)     _AD_OUT_UDC
+0000c16e     305 (0000c140)     _m_value2
+0000c170     305 (0000c140)     _r_value2
+0000c172     305 (0000c140)     _AD_OUT_UDC_PRO
+0000c174     305 (0000c140)     _m_value1
+0000c176     305 (0000c140)     __stdby03
+0000c178     305 (0000c140)     _r_value1
+0000c17a     305 (0000c140)     _m_value3
+
+0000c180     306 (0000c180)     _SPI
+0000c186     306 (0000c180)     _B_data
+0000c18c     306 (0000c180)     _A_data
+0000c192     306 (0000c180)     _C_data
+0000c198     306 (0000c180)     _Island
+0000c19e     306 (0000c180)     _RTIMER
+0000c1a4     306 (0000c180)     _ADFINAL
+0000c1ac     306 (0000c180)     _GIVE
+0000c1b4     306 (0000c180)     _PI_NPR_U
+
+0000c1c0     307 (0000c1c0)     _PI_MPR_Iq
+0000c1cc     307 (0000c1c0)     _PI_STA_Id
+0000c1d8     307 (0000c1c0)     _PI_MPR_U
+0000c1e4     307 (0000c1c0)     _PI_NPR_Id
+0000c1f0     307 (0000c1c0)     _PI_NPR_Iq
+
+0000c200     308 (0000c200)     _PI_STA_Iq
+0000c20c     308 (0000c200)     _PI_MPR_Id
+0000c218     308 (0000c200)     _EEPROM
+0000c226     308 (0000c200)     _PI_PARA_MPRU
+
+0000c240     309 (0000c240)     _PI_PARA_MPRID
+0000c24e     309 (0000c240)     _PI_PARA_NPRU
+0000c25c     309 (0000c240)     _PI_PARA_DYNID
+0000c26a     309 (0000c240)     _PI_PARA_DYNU
+
+0000c280     30a (0000c280)     _PI_PARA_MPRI
+0000c28e     30a (0000c280)     _PI_PARA_DYNIQ
+0000c29c     30a (0000c280)     _PI_PARA_STAI
+0000c2aa     30a (0000c280)     _PI_PARA_NPRIQ
+
+0000c2c0     30b (0000c2c0)     _PI_PARA_NPRID
+0000c2ce     30b (0000c2c0)     _PI_PARA_MPRIQ
+0000c2dc     30b (0000c2c0)     _disp
+0000c2eb     30b (0000c2c0)     _flag
+
+0000c300     30c (0000c300)     _addat
+0000c310     30c (0000c300)     _AMUX
+0000c326     30c (0000c300)     _SCI
+
+0000c340     30d (0000c340)     _CAP3
+0000c35a     30d (0000c340)     _CAP4
+
+0000c380     30e (0000c380)     _TRS_MPR_I
+0000c39c     30e (0000c380)     _TRS_PSTA_U
+
+0000c3c0     30f (0000c3c0)     _TRS_NGS_U
+0000c3dc     30f (0000c3c0)     _TRS_NPR_U
+
+0000c400     310 (0000c400)     _TRS_STA_I
+0000c41c     310 (0000c400)     _TRS_MPR_U
+
+0000c440     311 (0000c440)     _TRS_STA_U
+0000c45c     311 (0000c440)     _DIP_NPR_U
+
+0000c480     312 (0000c480)     _TRS_NPR_I
+0000c49c     312 (0000c480)     _DIP_NPR_I
+
+0000c4c0     313 (0000c4c0)     _DIP_STA_I
+0000c4dc     313 (0000c4c0)     _DIP_STA_U
+
+0000c500     314 (0000c500)     _AD
+0000c51c     314 (0000c500)     _TRS_GSTA_U
+
+0000c540     315 (0000c540)     _TRS_PMPR_I
+0000c55c     315 (0000c540)     _DIP_MPR_I
+
+0000c580     316 (0000c580)     _QEPDATA
+0000c59e     316 (0000c580)     _exadc
+
+0000c5c0     317 (0000c5c0)     _fXn
+
+0000c600     318 (0000c600)     _AD_OUT_NPR_I
+
+0000c640     319 (0000c640)     _AD_OUT_NGF_U
+
+0000c680     31a (0000c680)     _AD_OUT_STA_I
+
+0000c6c0     31b (0000c6c0)     _AD_OUT_SCR_I
+
+0000c700     31c (0000c700)     _MEAN_DATA
+
+0000c740     31d (0000c740)     _AD_OUT_MPR_I
+
+0000c780     31e (0000c780)     _AD_OUT_STAD_U
+
+0000c7c0     31f (0000c7c0)     _AD_OUT_U
+
+0000c800     320 (0000c800)     _AD_OUT_I
+
+0000c840     321 (0000c840)     _AD_OUT_STA_U
+
+0000c880     322 (0000c880)     _AD_OUT_NGS_U
+
+0000c8c0     323 (0000c8c0)     _RUN
+
+0000c900     324 (0000c900)     _DISP
+
+0000c940     325 (0000c940)     _SCI_canopen
+
+0000c980     326 (0000c980)     _D1
+
+0000c9c0     327 (0000c9c0)     _C3
+
+0000ca00     328 (0000ca00)     _D3
+
+0000ca40     329 (0000ca40)     _D2
+
+0000ca80     32a (0000ca80)     _A2
+
+0000cac0     32b (0000cac0)     _A1
+
+0000cb00     32c (0000cb00)     _C1
+
+0000cb40     32d (0000cb40)     _A3
+
+0000cb80     32e (0000cb80)     _C2
+
+0000cbc0     32f (0000cbc0)     _PRO
+
+0000cc40     331 (0000cc40)     _MAIN_LOOP
+
+0000ccc0     333 (0000ccc0)     _TEMP_store2
+
+0000cd40     335 (0000cd40)     _TEMP_store3
+
+0000cdc0     337 (0000cdc0)     _TEMP_store1
+
+0000ce40     339 (0000ce40)     _ADdata2
+
+0000cec0     33b (0000cec0)     _ADdata3
+
+0000cf40     33d (0000cf40)     _ADdata1
+
+0000cfc0     33f (0000cfc0)     _FFTdata2
+
+0000d040     341 (0000d040)     _FFTdata3
+
+0000d0c0     343 (0000d0c0)     _FFTdata1
+
+0000d140     345 (0000d140)     _FIRdata2
+
+0000d1c0     347 (0000d1c0)     _FIRdata1
+
+0000d240     349 (0000d240)     _FIRdata3
+
+0000d2c0     34b (0000d2c0)     _s
+
+0000d3c0     34f (0000d3c0)     _draw2
+
+0000d500     354 (0000d500)     _draw1
+
+0000d640     359 (0000d640)     _draw5
+
+0000d780     35e (0000d780)     _draw6
+
+0000d8c0     363 (0000d8c0)     _draw3
+
+0000da00     368 (0000da00)     _draw4
+
+0000db2c     36c (0000db00)     __unlock
+0000db2e     36c (0000db00)     __lock
+0000db30     36c (0000db00)     ___TI_cleanup_ptr
+0000db32     36c (0000db00)     ___TI_dtors_ptr
+0000db34     36c (0000db00)     _errno
+
+0000db40     36d (0000db40)     _ScokInf
+0000db56     36d (0000db40)     _CH395Inf
+
+0000db80     36e (0000db80)     _MyBuffer
+
+0000dbe4     36f (0000dbc0)     _CpuTimer1
+0000dbec     36f (0000dbc0)     _CpuTimer2
+0000dbf4     36f (0000dbc0)     _CpuTimer0
+
+0000dc02     370 (0000dc00)     _fir_coeff_LP_0_2_N16
+
+0000dc60     371 (0000dc40)     _fir_coeff_LP_0_1_N16
+
+0000dc80     372 (0000dc80)     _PieVectTableInit
+
+0000de24     378 (0000de00)     _CH395GWIPAddr
+0000de28     378 (0000de00)     _CH395IPAddr
+0000de2c     378 (0000de00)     _CH395IPMask
+0000de30     378 (0000de00)     _Socket0DesIP
+0000de36     378 (0000de00)     _Socket0DesPort
+0000de37     378 (0000de00)     _Socket0SourPort
+
+00200000    8000 (00200000)     _ramtest1
+
+0033fff8    cfff (0033ffc0)     _CsmPwl
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00008000   .text
+00009702   C$$EXIT
+0000940c   FS$$DIV
+0000cac0   _A1
+0000ca80   _A2
+0000cb40   _A3
+000088d7   _ABSOLUTE_error
+0000c500   _AD
+000089cb   _ADCINT_ISR
+0000c1a4   _ADFINAL
+0000c800   _AD_OUT_I
+0000c740   _AD_OUT_MPR_I
+0000c640   _AD_OUT_NGF_U
+0000c880   _AD_OUT_NGS_U
+0000c600   _AD_OUT_NPR_I
+0000c6c0   _AD_OUT_SCR_I
+0000c780   _AD_OUT_STAD_U
+0000c680   _AD_OUT_STA_I
+0000c840   _AD_OUT_STA_U
+0000c7c0   _AD_OUT_U
+0000c16c   _AD_OUT_UDC
+0000c172   _AD_OUT_UDC_PRO
+0000cf40   _ADdata1
+0000ce40   _ADdata2
+0000cec0   _ADdata3
+0000c310   _AMUX
+0000c18c   _A_data
+000088e4   _A_error
+00000b00   _AdcMirror
+00007100   _AdcRegs
+0000c186   _B_data
+0000cb00   _C1
+0000cb80   _C2
+0000c9c0   _C3
+0000c340   _CAP3
+0000c35a   _CAP4
+00008071   _CH395CMDCheckExist
+00008099   _CH395CMDGetGlobIntStatus
+0000813c   _CH395CMDGetMACAddr
+0000808d   _CH395CMDGetPHYStatus
+00008199   _CH395CMDGetRemoteIPP
+000082ab   _CH395CMDGetSocketStatus
+00008181   _CH395CMDGetUnreachIPPT
+00008065   _CH395CMDGetVer
+000080a5   _CH395CMDInitCH395
+00008054   _CH395CMDReset
+000080f5   _CH395CMDSetGWIPAddr
+000080df   _CH395CMDSetIPAddr
+00008121   _CH395CMDSetMACAddr
+00008154   _CH395CMDSetMACFilt
+0000810b   _CH395CMDSetMASKAddr
+00008081   _CH395CMDSetPHY
+0000828f   _CH395CMDSetRetryCount
+0000829b   _CH395CMDSetRetryPeriod
+000080bf   _CH395CMDSetUartBaudRate
+0000805f   _CH395CMDSleep
+0000836c   _CH395CRCRet6Bit
+0000825f   _CH395ClearRecvBuf
+000082e4   _CH395CloseSocket
+0000821e   _CH395EnablePing
+0000de24   _CH395GWIPAddr
+000080d3   _CH395GetCmdStatus
+0000826b   _CH395GetReceData
+0000824a   _CH395GetReceLength
+0000835c   _CH395GetSocketInt
+00008472   _CH395GlobalInterrupt
+0000de28   _CH395IPAddr
+0000de2c   _CH395IPMask
+0000db56   _CH395Inf
+000084a2   _CH395Init
+000082c6   _CH395OpenSocket
+0000822a   _CH395SendData
+000081b5   _CH395SetSocketDesIP
+000081e6   _CH395SetSocketDesPort
+0000820e   _CH395SetSocketIPRAWProto
+000081d6   _CH395SetSocketProtType
+000081fa   _CH395SetSocketSourPort
+000083db   _CH395SocketInitOpen
+00008401   _CH395SocketInterrupt
+00008302   _CH395TCPConnect
+0000833e   _CH395TCPDisconnect
+00008320   _CH395TCPListen
+000084e2   _CH395TEST
+0000800a   _CH395_PORT_INIT
+0000c192   _C_data
+00009544   _ConfigCpuTimer
+0000dbf4   _CpuTimer0
+00000c00   _CpuTimer0Regs
+0000dbe4   _CpuTimer1
+00000c08   _CpuTimer1Regs
+0000dbec   _CpuTimer2
+00000c10   _CpuTimer2Regs
+000090d6   _Cpu_Timer0_ISR
+0033fff8   _CsmPwl
+00000ae0   _CsmRegs
+000093db   _CsmUnlock
+0000c980   _D1
+0000ca40   _D2
+0000ca00   _D3
+000088f9   _DATALOG_ISR
+00008aed   _DINTCH1_ISR
+00008af7   _DINTCH2_ISR
+00008b01   _DINTCH3_ISR
+00008b0b   _DINTCH4_ISR
+00008b15   _DINTCH5_ISR
+00008b1f   _DINTCH6_ISR
+0000c55c   _DIP_MPR_I
+0000c49c   _DIP_NPR_I
+0000c45c   _DIP_NPR_U
+0000c4c0   _DIP_STA_I
+0000c4dc   _DIP_STA_U
+0000c900   _DISP
+0000c154   _DM_Lr
+0000c150   _DM_imrd
+0000c14e   _DM_imrq
+00009824   _DSP28x_usDelay
+00000880   _DevEmuRegs
+0000933f   _DisableDog
+00001000   _DmaRegs
+00008b79   _ECAN0INTA_ISR
+00008b8d   _ECAN0INTB_ISR
+00008b83   _ECAN1INTA_ISR
+00008b97   _ECAN1INTB_ISR
+00008a61   _ECAP1_INT_ISR
+00008a6b   _ECAP2_INT_ISR
+00008a75   _ECAP3_INT_ISR
+00008a7f   _ECAP4_INT_ISR
+00008a89   _ECAP5_INT_ISR
+00008a93   _ECAP6_INT_ISR
+00006040   _ECanaLAMRegs
+000060c0   _ECanaMOTORegs
+00006080   _ECanaMOTSRegs
+00006100   _ECanaMboxes
+00006000   _ECanaRegs
+00006240   _ECanbLAMRegs
+000062c0   _ECanbMOTORegs
+00006280   _ECanbMOTSRegs
+00006300   _ECanbMboxes
+00006200   _ECanbRegs
+00006a00   _ECap1Regs
+00006a20   _ECap2Regs
+00006a40   _ECap3Regs
+00006a60   _ECap4Regs
+00006a80   _ECap5Regs
+00006aa0   _ECap6Regs
+00008873   _EE
+0000c218   _EEPROM
+0000890d   _EMUINT_ISR
+00008a25   _EPWM1_INT_ISR
+000089e9   _EPWM1_TZINT_ISR
+00008a2f   _EPWM2_INT_ISR
+000089f3   _EPWM2_TZINT_ISR
+00008a39   _EPWM3_INT_ISR
+000089fd   _EPWM3_TZINT_ISR
+00008a43   _EPWM4_INT_ISR
+00008a07   _EPWM4_TZINT_ISR
+00008a4d   _EPWM5_INT_ISR
+00008a11   _EPWM5_TZINT_ISR
+00008a57   _EPWM6_INT_ISR
+00008a1b   _EPWM6_TZINT_ISR
+00006800   _EPwm1Regs
+00006840   _EPwm2Regs
+00006880   _EPwm3Regs
+000068c0   _EPwm4Regs
+00006900   _EPwm5Regs
+00006940   _EPwm6Regs
+00008a9d   _EQEP1_INT_ISR
+00008aa7   _EQEP2_INT_ISR
+00006b00   _EQep1Regs
+00006b40   _EQep2Regs
+0000c130   _ET_SUM1
+0000c132   _ET_SUM2
+0000969d   _EnableInterrupts
+00008778   _FFT
+0000d0c0   _FFTdata1
+0000cfc0   _FFTdata2
+0000d040   _FFTdata3
+0000d1c0   _FIRdata1
+0000d140   _FIRdata2
+0000d240   _FIRdata3
+00000a80   _FlashRegs
+0000c1ac   _GIVE
+0000c11a   _GIVE_NPR_Id_pre
+00006f80   _GpioCtrlRegs
+00006fc0   _GpioDataRegs
+00006fe0   _GpioIntRegs
+00008b29   _I2CINT1A_ISR
+00008b33   _I2CINT2A_ISR
+00007900   _I2caRegs
+00008921   _ILLEGAL_ISR
+000088e5   _INT13_ISR
+000088ef   _INT14_ISR
+000083aa   _InitCH395InfParam
+0000950b   _InitCpuTimers
+00009324   _InitFlash
+00008ead   _InitGpio
+00009393   _InitPeripheralClocks
+00008bfb   _InitPeripherals
+0000967e   _InitPieCtrl
+000096c9   _InitPieVectTable
+00009347   _InitPll
+000083c1   _InitSocketParam
+0000931b   _InitSysCtrl
+00009225   _InitXintf
+000092c1   _InitXintf16Gpio
+0000927a   _InitXintf32Gpio
+0000c198   _Island
+00008bdd   _LUF_ISR
+00008bd3   _LVF_ISR
+0000cc40   _MAIN_LOOP
+0000c700   _MEAN_DATA
+000088af   _MEAURE_value
+0000c168   _MPPT_Id
+0000c126   _MPPT_Pnactive
+0000c164   _MPPT_Time
+0000c118   _MPPT_cnt
+00008ad9   _MRINTA_ISR
+00008ac5   _MRINTB_ISR
+00008ae3   _MXINTA_ISR
+00008acf   _MXINTB_ISR
+00005000   _McbspaRegs
+00005040   _McbspbRegs
+0000db80   _MyBuffer
+00008917   _NMI_ISR
+0000c114   _OCS_Trf
+00008be7   _PIE_RESERVED
+0000c20c   _PI_MPR_Id
+0000c1c0   _PI_MPR_Iq
+0000c1d8   _PI_MPR_U
+0000c1e4   _PI_NPR_Id
+0000c1f0   _PI_NPR_Iq
+0000c1b4   _PI_NPR_U
+0000c25c   _PI_PARA_DYNID
+0000c28e   _PI_PARA_DYNIQ
+0000c26a   _PI_PARA_DYNU
+0000c280   _PI_PARA_MPRI
+0000c240   _PI_PARA_MPRID
+0000c2ce   _PI_PARA_MPRIQ
+0000c226   _PI_PARA_MPRU
+0000c2c0   _PI_PARA_NPRID
+0000c2aa   _PI_PARA_NPRIQ
+0000c24e   _PI_PARA_NPRU
+0000c29c   _PI_PARA_STAI
+0000c1cc   _PI_STA_Id
+0000c200   _PI_STA_Iq
+0000c158   _POSCNT_TEST
+0000cbc0   _PRO
+00000ce0   _PieCtrlRegs
+00000d00   _PieVectTable
+0000dc80   _PieVectTableInit
+0000c15c   _Pnactive
+0000c124   _Pnactive_pre
+0000c15a   _Pnreactive
+0000c580   _QEPDATA
+0000c0d9   _RAMDATA_POS
+000088c6   _RATIO_error
+000088a6   _REAL_value
+0000c19e   _RTIMER
+00008903   _RTOSINT_ISR
+0000c8c0   _RUN
+0000c13a   _RUN_mpridrf_exi
+0000c0e5   _RUN_mpriq
+0000c326   _SCI
+00008b51   _SCIRXINTA_ISR
+00008b65   _SCIRXINTB_ISR
+00008b3d   _SCIRXINTC_ISR
+00008b5b   _SCITXINTA_ISR
+00008b6f   _SCITXINTB_ISR
+00008b47   _SCITXINTC_ISR
+0000c940   _SCI_canopen
+000089a3   _SEQ1INT_ISR
+000089ad   _SEQ2INT_ISR
+0000c180   _SPI
+00008ab1   _SPIRXINTA_ISR
+00008abb   _SPITXINTA_ISR
+0000c106   _SW_MPR
+0000c0e8   _SW_NPR
+00007050   _SciaRegs
+00007750   _ScibRegs
+00007770   _ScicRegs
+0000db40   _ScokInf
+0000de30   _Socket0DesIP
+0000de36   _Socket0DesPort
+0000de37   _Socket0SourPort
+00008018   _Spi395Exchange
+00007040   _SpiaRegs
+00007010   _SysCtrlRegs
+0000cdc0   _TEMP_store1
+0000ccc0   _TEMP_store2
+0000cd40   _TEMP_store3
+000089d5   _TINT0_ISR
+0000c51c   _TRS_GSTA_U
+0000c380   _TRS_MPR_I
+0000c41c   _TRS_MPR_U
+0000c3c0   _TRS_NGS_U
+0000c480   _TRS_NPR_I
+0000c3dc   _TRS_NPR_U
+0000c540   _TRS_PMPR_I
+0000c39c   _TRS_PSTA_U
+0000c400   _TRS_STA_I
+0000c440   _TRS_STA_U
+0000c152   _Te_feedback
+00008985   _USER10_ISR
+0000898f   _USER11_ISR
+00008999   _USER12_ISR
+0000892b   _USER1_ISR
+00008935   _USER2_ISR
+0000893f   _USER3_ISR
+00008949   _USER4_ISR
+00008953   _USER5_ISR
+0000895d   _USER6_ISR
+00008967   _USER7_ISR
+00008971   _USER8_ISR
+0000897b   _USER9_ISR
+000089df   _WAKEINT_ISR
+000089b7   _XINT1_ISR
+000089c1   _XINT2_ISR
+00008ba1   _XINT3_ISR
+00008bab   _XINT4_ISR
+00008bb5   _XINT5_ISR
+00008bbf   _XINT6_ISR
+00008bc9   _XINT7_ISR
+00007070   _XIntruptRegs
+00000b20   _XintfRegs
+0000c0d6   __AGLRF
+0000c10c   __AUTOCSTAC
+0000c0a5   __BA_AGLRF
+0000c053   __BA_EAGLRF
+0000c003   __BA_EFREQ
+0000c010   __BA_EIA1
+0000c00d   __BA_EIA2
+0000c00f   __BA_EIB1
+0000c00c   __BA_EIB2
+0000c016   __BA_EIC1
+0000c011   __BA_EIC2
+0000c029   __BA_EMEXI
+0000c051   __BA_EMIQRF
+0000c04d   __BA_ENIDRF
+0000c04a   __BA_ENIQRF
+0000c00a   __BA_ENPRUD
+0000c001   __BA_ENPRUD2
+0000c004   __BA_ENPRUQ
+0000c000   __BA_ENPRUQ2
+0000c009   __BA_ENUDOUT
+0000c014   __BA_ENUQOUT
+0000c018   __BA_EPGRID
+0000c026   __BA_EPIOMID
+0000c02d   __BA_EPIOMIQ
+0000c025   __BA_EPIONID
+0000c024   __BA_EPIONIQ
+0000c02e   __BA_EPIONU
+0000c019   __BA_EPNPR
+0000c022   __BA_EPSTA
+0000c048   __BA_ERR1
+0000c049   __BA_ERR2
+0000c052   __BA_ERR3
+0000c04b   __BA_ERR4
+0000c002   __BA_ESPEED
+0000c02f   __BA_ESTAIAC
+0000c01c   __BA_ESTAIBA
+0000c00b   __BA_ETA1
+0000c008   __BA_ETA2
+0000c006   __BA_ETB1
+0000c007   __BA_ETB2
+0000c005   __BA_ETC1
+0000c027   __BA_ETC2
+0000c050   __BA_ETLAC
+0000c02b   __BA_ETLDUDT
+0000c01b   __BA_ETOQFB
+0000c05c   __BA_ETOQRF
+0000c02a   __BA_ETSKIIP
+0000c012   __BA_EUAB0
+0000c00e   __BA_EUAB1
+0000c028   __BA_EUAB2
+0000c017   __BA_EUBC0
+0000c015   __BA_EUBC1
+0000c013   __BA_EUBC2
+0000c04e   __BA_EUDC
+0000c04f   __BA_EURF
+0000c089   __BA_EXCID
+0000c074   __BA_EXCIQ
+0000c0ad   __BA_FREQ
+0000c077   __BA_GRDUD
+0000c06e   __BA_GRDUQ
+0000c099   __BA_IA1
+0000c0b6   __BA_IA2
+0000c0b8   __BA_IB1
+0000c0b5   __BA_IB2
+0000c0bf   __BA_IC1
+0000c0ba   __BA_IC2
+0000c079   __BA_LEDB
+0000c07a   __BA_LEDV
+0000c0b4   __BA_MEXI
+0000c091   __BA_MIDRF
+0000c093   __BA_MIQRF
+0000c096   __BA_NIQRF
+0000c075   __BA_PGRID
+0000c071   __BA_PIOMID
+0000c070   __BA_PIOMIQ
+0000c0b0   __BA_PIONID
+0000c0af   __BA_PIONIQ
+0000c0bd   __BA_PIONU
+0000c06a   __BA_PNPR
+0000c063   __BA_PSTA
+0000c06c   __BA_QGRID
+0000c067   __BA_QNPR
+0000c068   __BA_QSTA
+0000c08f   __BA_SGRID
+0000c088   __BA_SNPR
+0000c0ac   __BA_SPEED
+0000c069   __BA_SSTA
+0000c061   __BA_STAIAC
+0000c066   __BA_STAIBA
+0000c06f   __BA_STAID
+0000c076   __BA_STAIQ
+0000c06b   __BA_STAUABD
+0000c062   __BA_STAUBCD
+0000c06d   __BA_STAUD
+0000c072   __BA_STAUQ
+0000c0b3   __BA_TA1
+0000c0ae   __BA_TA2
+0000c0aa   __BA_TB1
+0000c0ab   __BA_TB2
+0000c0a9   __BA_TC1
+0000c0b2   __BA_TC2
+0000c0a3   __BA_TIME1_0
+0000c0a8   __BA_TIME1_1
+0000c095   __BA_TIME1_2
+0000c094   __BA_TIME1_3
+0000c09b   __BA_TIME1_4
+0000c092   __BA_TIME1_5
+0000c09d   __BA_TIME2_0
+0000c0a2   __BA_TIME2_1
+0000c09f   __BA_TIME2_2
+0000c0a6   __BA_TIME2_3
+0000c0b9   __BA_TIME2_4
+0000c0a4   __BA_TIME2_5
+0000c023   __BA_TIME3_0
+0000c020   __BA_TIME3_1
+0000c0a1   __BA_TIME3_2
+0000c0a0   __BA_TIME3_3
+0000c0a7   __BA_TIME3_4
+0000c09e   __BA_TIME3_5
+0000c01d   __BA_TIME4_0
+0000c01a   __BA_TIME4_1
+0000c021   __BA_TIME4_2
+0000c02c   __BA_TIME4_3
+0000c01f   __BA_TIME4_4
+0000c01e   __BA_TIME4_5
+0000c073   __BA_TLAC
+0000c078   __BA_TLDUDT
+0000c064   __BA_TMSKIIP
+0000c065   __BA_TNSKIIP
+0000c098   __BA_TOQFB
+0000c09a   __BA_TOQRF
+0000c0bb   __BA_UAB0
+0000c0b7   __BA_UAB1
+0000c0c1   __BA_UAB2
+0000c0c0   __BA_UBC0
+0000c0be   __BA_UBC1
+0000c0bc   __BA_UBC2
+0000c09c   __BA_UDC
+0000c097   __BA_URF
+0000c10a   __CANOPER
+0000c10d   __COMP2
+0000c0ca   __COMPTIME
+0000c0c8   __DEADTIME
+0000c039   __DYN_U_Kd
+0000c032   __DYN_U_Ki
+0000c035   __DYN_U_Kp
+0000c037   __DYN_U_errmax
+0000c036   __DYN_U_errmin
+0000c03b   __DYN_U_incrementmax
+0000c044   __DYN_U_outmax
+0000c0d8   __EIDCO
+0000c0e4   __EIN
+0000c0d7   __ENCODPOS
+0000c10e   __ENSCR
+0000c0e1   __MC_DATE
+0000c0e3   __MC_ID
+0000c0df   __MC_REV
+0000c0e0   __MC_TYPE
+0000c0c5   __MIDRF
+0000c0cc   __MINONTIME
+0000c0d5   __MIQRF
+0000c041   __MPR_ID_Kd
+0000c03c   __MPR_ID_Ki
+0000c03d   __MPR_ID_Kp
+0000c045   __MPR_ID_errmax
+0000c058   __MPR_ID_errmin
+0000c043   __MPR_ID_incrementmax
+0000c03e   __MPR_ID_outmax
+0000c034   __MPR_IQ_Kd
+0000c047   __MPR_IQ_Ki
+0000c042   __MPR_IQ_Kp
+0000c03a   __MPR_IQ_errmax
+0000c031   __MPR_IQ_errmin
+0000c030   __MPR_IQ_incrementmax
+0000c033   __MPR_IQ_outmax
+0000c0f9   __MPR_U_Kd
+0000c0fa   __MPR_U_Ki
+0000c0f8   __MPR_U_Kp
+0000c040   __MPR_U_errmax
+0000c03f   __MPR_U_errmin
+0000c046   __MPR_U_incrementmax
+0000c0fb   __MPR_U_outmax
+0000c0da   __MSG_SCOUT1
+0000c0dc   __MSG_SCOUT2
+0000c0c6   __NIDRF
+0000c0c7   __NIQRF
+0000c0ec   __NPR_ID_Kd
+0000c0ea   __NPR_ID_Ki
+0000c0eb   __NPR_ID_Kp
+0000c0ed   __NPR_ID_errmax
+0000c0ef   __NPR_ID_errmin
+0000c0fd   __NPR_ID_incrementmax
+0000c0ee   __NPR_ID_outmax
+0000c100   __NPR_IQ_Kd
+0000c0fe   __NPR_IQ_Ki
+0000c0fc   __NPR_IQ_Kp
+0000c109   __NPR_IQ_errmax
+0000c0f7   __NPR_IQ_errmin
+0000c0f6   __NPR_IQ_incrementmax
+0000c0ff   __NPR_IQ_outmax
+0000c0f0   __NPR_U_Kd
+0000c0f1   __NPR_U_Ki
+0000c108   __NPR_U_Kp
+0000c0f4   __NPR_U_errmax
+0000c0f3   __NPR_U_errmin
+0000c0f5   __NPR_U_incrementmax
+0000c0f2   __NPR_U_outmax
+0000c0e9   __NQEPPCO
+0000c0db   __NULL_VAL
+0000c10b   __OPERATION
+0000c0e7   __OUT3_TEST
+0000c0dd   __OUT_AMUX1
+0000c0de   __OUT_AMUX2
+0000c0ce   __RESET
+0000c0c4   __RU_AGLT
+0000c0cd   __RU_IDT
+0000c0c3   __RU_IQT
+0000c0c2   __RU_TOQT
+0000c0cb   __RU_UDCT
+0000c0e2   __SCIB_ADDR
+0000c083   __SCIB_BAUD
+0000c103   __SCOUTH
+0000c102   __SCOUTL
+0000c05e   __SC_IACOV1
+0000c05b   __SC_IACOV2
+0000c04c   __SC_IACOVST
+0000c08e   __SC_LVIAC2
+0000c08a   __SC_LVUDC1
+0000c087   __SC_LVUDC2
+0000c085   __SC_MPR_TLOV
+0000c08c   __SC_MPR_UD
+0000c08b   __SC_MPR_UQ
+0000c090   __SC_MSPEED1
+0000c07d   __SC_MSPEED2
+0000c086   __SC_NPR_TLOV
+0000c05a   __SC_PGOV
+0000c05f   __SC_QGOV
+0000c038   __SC_RTRN
+0000c057   __SC_RTRT
+0000c0b1   __SC_TSCRON
+0000c060   __SC_UACLV1
+0000c05d   __SC_UACOV1
+0000c059   __SC_UDCLV
+0000c055   __SC_UDCOV
+0000c054   __SC_UDCOVH
+0000c07c   __SC_UDSTAC
+0000c056   __SC_VDCON
+00000700   __STACK_END
+00000300   __STACK_SIZE
+0000c0d0   __STDBY1
+0000c0d2   __STDBY2
+0000c0d1   __STDBY3
+0000c0d3   __STDBY4
+0000c101   __STDBY5
+0000c105   __STDBY6
+0000c104   __STDBY7
+0000c107   __STDBY8
+0000c0c9   __SW_FR
+0000c0cf   __SYSRUN
+0000c0e6   __SY_RTRN
+00000001   __TI_args_main
+0000c0d4   __TOQRF
+0000db30   ___TI_cleanup_ptr
+0000db32   ___TI_dtors_ptr
+ffffffff   ___binit__
+ffffffff   ___c_args__
+0000972c   ___cinit__
+0000972c   ___etext__
+ffffffff   ___pinit__
+00008000   ___text__
+000096e9   __args_main
+0000c156   __eidco
+0000c14c   __encodpos
+0000db2e   __lock
+00009723   __nop
+0000971f   __register_lock
+0000971b   __register_unlock
+00000400   __stack
+0000c142   __stdby01
+0000c144   __stdby02
+0000c176   __stdby03
+0000c16a   __stdby04
+0000c162   __stdby05
+0000c15e   __stdby06
+0000c160   __stdby07
+0000c166   __stdby08
+0000db2c   __unlock
+00009702   _abort
+0000c300   _addat
+00009638   _c_int00
+0000c11c   _cnt_Island_F
+0000c11e   _cnt_Island_U
+0000957f   _cos
+0000c2dc   _disp
+0000d500   _draw1
+0000d3c0   _draw2
+0000d8c0   _draw3
+0000da00   _draw4
+0000d640   _draw5
+0000d780   _draw6
+0000db34   _errno
+0000c59e   _exadc
+00009704   _exit
+0000c14a   _fSum
+0000c5c0   _fXn
+0000dc60   _fir_coeff_LP_0_1_N16
+0000dc02   _fir_coeff_LP_0_2_N16
+00009494   _fir_proc
+0000c2eb   _flag
+0000c116   _i_cnt1
+0000c110   _i_cnt2
+0000c112   _i_cnt3
+0000c07f   _interruptnumber
+0000c134   _m
+00008040   _mStopIfError
+0000c174   _m_value1
+0000c16e   _m_value2
+0000c17a   _m_value3
+000084f1   _main
+000084bc   _netinit
+0000c178   _r_value1
+0000c170   _r_value2
+0000c146   _r_value3
+00200000   _ramtest1
+00008bf1   _rsvd_ISR
+0000d2c0   _s
+000095e0   _sin
+000096a6   _sqrt
+0000c148   _sum1
+0000c140   _sum2
+0000c084   _temp
+0000c120   _testtheta
+0000c13e   _u_alfa_MPR
+0000c12c   _u_alfa_NPR
+0000c13c   _u_beta_MPR
+0000c138   _u_beta_NPR
+0000c12a   _ua_m
+0000c128   _ub_m
+0000c12e   _uc_m
+0000c136   _vdc
+00008005   _xCH395CmdStart
+00008000   _xEndCH395Cmd
+00008039   _xReadCH395Data
+00008025   _xWriteCH395Cmd
+00008033   _xWriteCH395Data
+0000c080   _zsector
+0000c122   _zys
+0000c07e   _zys1
+0000c07b   _zys2
+0000c082   _zys3
+0000c08d   _zys4
+ffffffff   binit
+0000972c   cinit
+00000000   code_start
+0000972c   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   code_start
+00000001   __TI_args_main
+00000300   __STACK_SIZE
+00000400   __stack
+00000700   __STACK_END
+00000880   _DevEmuRegs
+00000a80   _FlashRegs
+00000ae0   _CsmRegs
+00000b00   _AdcMirror
+00000b20   _XintfRegs
+00000c00   _CpuTimer0Regs
+00000c08   _CpuTimer1Regs
+00000c10   _CpuTimer2Regs
+00000ce0   _PieCtrlRegs
+00000d00   _PieVectTable
+00001000   _DmaRegs
+00005000   _McbspaRegs
+00005040   _McbspbRegs
+00006000   _ECanaRegs
+00006040   _ECanaLAMRegs
+00006080   _ECanaMOTSRegs
+000060c0   _ECanaMOTORegs
+00006100   _ECanaMboxes
+00006200   _ECanbRegs
+00006240   _ECanbLAMRegs
+00006280   _ECanbMOTSRegs
+000062c0   _ECanbMOTORegs
+00006300   _ECanbMboxes
+00006800   _EPwm1Regs
+00006840   _EPwm2Regs
+00006880   _EPwm3Regs
+000068c0   _EPwm4Regs
+00006900   _EPwm5Regs
+00006940   _EPwm6Regs
+00006a00   _ECap1Regs
+00006a20   _ECap2Regs
+00006a40   _ECap3Regs
+00006a60   _ECap4Regs
+00006a80   _ECap5Regs
+00006aa0   _ECap6Regs
+00006b00   _EQep1Regs
+00006b40   _EQep2Regs
+00006f80   _GpioCtrlRegs
+00006fc0   _GpioDataRegs
+00006fe0   _GpioIntRegs
+00007010   _SysCtrlRegs
+00007040   _SpiaRegs
+00007050   _SciaRegs
+00007070   _XIntruptRegs
+00007100   _AdcRegs
+00007750   _ScibRegs
+00007770   _ScicRegs
+00007900   _I2caRegs
+00008000   .text
+00008000   ___text__
+00008000   _xEndCH395Cmd
+00008005   _xCH395CmdStart
+0000800a   _CH395_PORT_INIT
+00008018   _Spi395Exchange
+00008025   _xWriteCH395Cmd
+00008033   _xWriteCH395Data
+00008039   _xReadCH395Data
+00008040   _mStopIfError
+00008054   _CH395CMDReset
+0000805f   _CH395CMDSleep
+00008065   _CH395CMDGetVer
+00008071   _CH395CMDCheckExist
+00008081   _CH395CMDSetPHY
+0000808d   _CH395CMDGetPHYStatus
+00008099   _CH395CMDGetGlobIntStatus
+000080a5   _CH395CMDInitCH395
+000080bf   _CH395CMDSetUartBaudRate
+000080d3   _CH395GetCmdStatus
+000080df   _CH395CMDSetIPAddr
+000080f5   _CH395CMDSetGWIPAddr
+0000810b   _CH395CMDSetMASKAddr
+00008121   _CH395CMDSetMACAddr
+0000813c   _CH395CMDGetMACAddr
+00008154   _CH395CMDSetMACFilt
+00008181   _CH395CMDGetUnreachIPPT
+00008199   _CH395CMDGetRemoteIPP
+000081b5   _CH395SetSocketDesIP
+000081d6   _CH395SetSocketProtType
+000081e6   _CH395SetSocketDesPort
+000081fa   _CH395SetSocketSourPort
+0000820e   _CH395SetSocketIPRAWProto
+0000821e   _CH395EnablePing
+0000822a   _CH395SendData
+0000824a   _CH395GetReceLength
+0000825f   _CH395ClearRecvBuf
+0000826b   _CH395GetReceData
+0000828f   _CH395CMDSetRetryCount
+0000829b   _CH395CMDSetRetryPeriod
+000082ab   _CH395CMDGetSocketStatus
+000082c6   _CH395OpenSocket
+000082e4   _CH395CloseSocket
+00008302   _CH395TCPConnect
+00008320   _CH395TCPListen
+0000833e   _CH395TCPDisconnect
+0000835c   _CH395GetSocketInt
+0000836c   _CH395CRCRet6Bit
+000083aa   _InitCH395InfParam
+000083c1   _InitSocketParam
+000083db   _CH395SocketInitOpen
+00008401   _CH395SocketInterrupt
+00008472   _CH395GlobalInterrupt
+000084a2   _CH395Init
+000084bc   _netinit
+000084e2   _CH395TEST
+000084f1   _main
+00008778   _FFT
+00008873   _EE
+000088a6   _REAL_value
+000088af   _MEAURE_value
+000088c6   _RATIO_error
+000088d7   _ABSOLUTE_error
+000088e4   _A_error
+000088e5   _INT13_ISR
+000088ef   _INT14_ISR
+000088f9   _DATALOG_ISR
+00008903   _RTOSINT_ISR
+0000890d   _EMUINT_ISR
+00008917   _NMI_ISR
+00008921   _ILLEGAL_ISR
+0000892b   _USER1_ISR
+00008935   _USER2_ISR
+0000893f   _USER3_ISR
+00008949   _USER4_ISR
+00008953   _USER5_ISR
+0000895d   _USER6_ISR
+00008967   _USER7_ISR
+00008971   _USER8_ISR
+0000897b   _USER9_ISR
+00008985   _USER10_ISR
+0000898f   _USER11_ISR
+00008999   _USER12_ISR
+000089a3   _SEQ1INT_ISR
+000089ad   _SEQ2INT_ISR
+000089b7   _XINT1_ISR
+000089c1   _XINT2_ISR
+000089cb   _ADCINT_ISR
+000089d5   _TINT0_ISR
+000089df   _WAKEINT_ISR
+000089e9   _EPWM1_TZINT_ISR
+000089f3   _EPWM2_TZINT_ISR
+000089fd   _EPWM3_TZINT_ISR
+00008a07   _EPWM4_TZINT_ISR
+00008a11   _EPWM5_TZINT_ISR
+00008a1b   _EPWM6_TZINT_ISR
+00008a25   _EPWM1_INT_ISR
+00008a2f   _EPWM2_INT_ISR
+00008a39   _EPWM3_INT_ISR
+00008a43   _EPWM4_INT_ISR
+00008a4d   _EPWM5_INT_ISR
+00008a57   _EPWM6_INT_ISR
+00008a61   _ECAP1_INT_ISR
+00008a6b   _ECAP2_INT_ISR
+00008a75   _ECAP3_INT_ISR
+00008a7f   _ECAP4_INT_ISR
+00008a89   _ECAP5_INT_ISR
+00008a93   _ECAP6_INT_ISR
+00008a9d   _EQEP1_INT_ISR
+00008aa7   _EQEP2_INT_ISR
+00008ab1   _SPIRXINTA_ISR
+00008abb   _SPITXINTA_ISR
+00008ac5   _MRINTB_ISR
+00008acf   _MXINTB_ISR
+00008ad9   _MRINTA_ISR
+00008ae3   _MXINTA_ISR
+00008aed   _DINTCH1_ISR
+00008af7   _DINTCH2_ISR
+00008b01   _DINTCH3_ISR
+00008b0b   _DINTCH4_ISR
+00008b15   _DINTCH5_ISR
+00008b1f   _DINTCH6_ISR
+00008b29   _I2CINT1A_ISR
+00008b33   _I2CINT2A_ISR
+00008b3d   _SCIRXINTC_ISR
+00008b47   _SCITXINTC_ISR
+00008b51   _SCIRXINTA_ISR
+00008b5b   _SCITXINTA_ISR
+00008b65   _SCIRXINTB_ISR
+00008b6f   _SCITXINTB_ISR
+00008b79   _ECAN0INTA_ISR
+00008b83   _ECAN1INTA_ISR
+00008b8d   _ECAN0INTB_ISR
+00008b97   _ECAN1INTB_ISR
+00008ba1   _XINT3_ISR
+00008bab   _XINT4_ISR
+00008bb5   _XINT5_ISR
+00008bbf   _XINT6_ISR
+00008bc9   _XINT7_ISR
+00008bd3   _LVF_ISR
+00008bdd   _LUF_ISR
+00008be7   _PIE_RESERVED
+00008bf1   _rsvd_ISR
+00008bfb   _InitPeripherals
+00008ead   _InitGpio
+000090d6   _Cpu_Timer0_ISR
+00009225   _InitXintf
+0000927a   _InitXintf32Gpio
+000092c1   _InitXintf16Gpio
+0000931b   _InitSysCtrl
+00009324   _InitFlash
+0000933f   _DisableDog
+00009347   _InitPll
+00009393   _InitPeripheralClocks
+000093db   _CsmUnlock
+0000940c   FS$$DIV
+00009494   _fir_proc
+0000950b   _InitCpuTimers
+00009544   _ConfigCpuTimer
+0000957f   _cos
+000095e0   _sin
+00009638   _c_int00
+0000967e   _InitPieCtrl
+0000969d   _EnableInterrupts
+000096a6   _sqrt
+000096c9   _InitPieVectTable
+000096e9   __args_main
+00009702   C$$EXIT
+00009702   _abort
+00009704   _exit
+0000971b   __register_unlock
+0000971f   __register_lock
+00009723   __nop
+0000972c   ___cinit__
+0000972c   ___etext__
+0000972c   cinit
+0000972c   etext
+00009824   _DSP28x_usDelay
+0000c000   __BA_ENPRUQ2
+0000c001   __BA_ENPRUD2
+0000c002   __BA_ESPEED
+0000c003   __BA_EFREQ
+0000c004   __BA_ENPRUQ
+0000c005   __BA_ETC1
+0000c006   __BA_ETB1
+0000c007   __BA_ETB2
+0000c008   __BA_ETA2
+0000c009   __BA_ENUDOUT
+0000c00a   __BA_ENPRUD
+0000c00b   __BA_ETA1
+0000c00c   __BA_EIB2
+0000c00d   __BA_EIA2
+0000c00e   __BA_EUAB1
+0000c00f   __BA_EIB1
+0000c010   __BA_EIA1
+0000c011   __BA_EIC2
+0000c012   __BA_EUAB0
+0000c013   __BA_EUBC2
+0000c014   __BA_ENUQOUT
+0000c015   __BA_EUBC1
+0000c016   __BA_EIC1
+0000c017   __BA_EUBC0
+0000c018   __BA_EPGRID
+0000c019   __BA_EPNPR
+0000c01a   __BA_TIME4_1
+0000c01b   __BA_ETOQFB
+0000c01c   __BA_ESTAIBA
+0000c01d   __BA_TIME4_0
+0000c01e   __BA_TIME4_5
+0000c01f   __BA_TIME4_4
+0000c020   __BA_TIME3_1
+0000c021   __BA_TIME4_2
+0000c022   __BA_EPSTA
+0000c023   __BA_TIME3_0
+0000c024   __BA_EPIONIQ
+0000c025   __BA_EPIONID
+0000c026   __BA_EPIOMID
+0000c027   __BA_ETC2
+0000c028   __BA_EUAB2
+0000c029   __BA_EMEXI
+0000c02a   __BA_ETSKIIP
+0000c02b   __BA_ETLDUDT
+0000c02c   __BA_TIME4_3
+0000c02d   __BA_EPIOMIQ
+0000c02e   __BA_EPIONU
+0000c02f   __BA_ESTAIAC
+0000c030   __MPR_IQ_incrementmax
+0000c031   __MPR_IQ_errmin
+0000c032   __DYN_U_Ki
+0000c033   __MPR_IQ_outmax
+0000c034   __MPR_IQ_Kd
+0000c035   __DYN_U_Kp
+0000c036   __DYN_U_errmin
+0000c037   __DYN_U_errmax
+0000c038   __SC_RTRN
+0000c039   __DYN_U_Kd
+0000c03a   __MPR_IQ_errmax
+0000c03b   __DYN_U_incrementmax
+0000c03c   __MPR_ID_Ki
+0000c03d   __MPR_ID_Kp
+0000c03e   __MPR_ID_outmax
+0000c03f   __MPR_U_errmin
+0000c040   __MPR_U_errmax
+0000c041   __MPR_ID_Kd
+0000c042   __MPR_IQ_Kp
+0000c043   __MPR_ID_incrementmax
+0000c044   __DYN_U_outmax
+0000c045   __MPR_ID_errmax
+0000c046   __MPR_U_incrementmax
+0000c047   __MPR_IQ_Ki
+0000c048   __BA_ERR1
+0000c049   __BA_ERR2
+0000c04a   __BA_ENIQRF
+0000c04b   __BA_ERR4
+0000c04c   __SC_IACOVST
+0000c04d   __BA_ENIDRF
+0000c04e   __BA_EUDC
+0000c04f   __BA_EURF
+0000c050   __BA_ETLAC
+0000c051   __BA_EMIQRF
+0000c052   __BA_ERR3
+0000c053   __BA_EAGLRF
+0000c054   __SC_UDCOVH
+0000c055   __SC_UDCOV
+0000c056   __SC_VDCON
+0000c057   __SC_RTRT
+0000c058   __MPR_ID_errmin
+0000c059   __SC_UDCLV
+0000c05a   __SC_PGOV
+0000c05b   __SC_IACOV2
+0000c05c   __BA_ETOQRF
+0000c05d   __SC_UACOV1
+0000c05e   __SC_IACOV1
+0000c05f   __SC_QGOV
+0000c060   __SC_UACLV1
+0000c061   __BA_STAIAC
+0000c062   __BA_STAUBCD
+0000c063   __BA_PSTA
+0000c064   __BA_TMSKIIP
+0000c065   __BA_TNSKIIP
+0000c066   __BA_STAIBA
+0000c067   __BA_QNPR
+0000c068   __BA_QSTA
+0000c069   __BA_SSTA
+0000c06a   __BA_PNPR
+0000c06b   __BA_STAUABD
+0000c06c   __BA_QGRID
+0000c06d   __BA_STAUD
+0000c06e   __BA_GRDUQ
+0000c06f   __BA_STAID
+0000c070   __BA_PIOMIQ
+0000c071   __BA_PIOMID
+0000c072   __BA_STAUQ
+0000c073   __BA_TLAC
+0000c074   __BA_EXCIQ
+0000c075   __BA_PGRID
+0000c076   __BA_STAIQ
+0000c077   __BA_GRDUD
+0000c078   __BA_TLDUDT
+0000c079   __BA_LEDB
+0000c07a   __BA_LEDV
+0000c07b   _zys2
+0000c07c   __SC_UDSTAC
+0000c07d   __SC_MSPEED2
+0000c07e   _zys1
+0000c07f   _interruptnumber
+0000c080   _zsector
+0000c082   _zys3
+0000c083   __SCIB_BAUD
+0000c084   _temp
+0000c085   __SC_MPR_TLOV
+0000c086   __SC_NPR_TLOV
+0000c087   __SC_LVUDC2
+0000c088   __BA_SNPR
+0000c089   __BA_EXCID
+0000c08a   __SC_LVUDC1
+0000c08b   __SC_MPR_UQ
+0000c08c   __SC_MPR_UD
+0000c08d   _zys4
+0000c08e   __SC_LVIAC2
+0000c08f   __BA_SGRID
+0000c090   __SC_MSPEED1
+0000c091   __BA_MIDRF
+0000c092   __BA_TIME1_5
+0000c093   __BA_MIQRF
+0000c094   __BA_TIME1_3
+0000c095   __BA_TIME1_2
+0000c096   __BA_NIQRF
+0000c097   __BA_URF
+0000c098   __BA_TOQFB
+0000c099   __BA_IA1
+0000c09a   __BA_TOQRF
+0000c09b   __BA_TIME1_4
+0000c09c   __BA_UDC
+0000c09d   __BA_TIME2_0
+0000c09e   __BA_TIME3_5
+0000c09f   __BA_TIME2_2
+0000c0a0   __BA_TIME3_3
+0000c0a1   __BA_TIME3_2
+0000c0a2   __BA_TIME2_1
+0000c0a3   __BA_TIME1_0
+0000c0a4   __BA_TIME2_5
+0000c0a5   __BA_AGLRF
+0000c0a6   __BA_TIME2_3
+0000c0a7   __BA_TIME3_4
+0000c0a8   __BA_TIME1_1
+0000c0a9   __BA_TC1
+0000c0aa   __BA_TB1
+0000c0ab   __BA_TB2
+0000c0ac   __BA_SPEED
+0000c0ad   __BA_FREQ
+0000c0ae   __BA_TA2
+0000c0af   __BA_PIONIQ
+0000c0b0   __BA_PIONID
+0000c0b1   __SC_TSCRON
+0000c0b2   __BA_TC2
+0000c0b3   __BA_TA1
+0000c0b4   __BA_MEXI
+0000c0b5   __BA_IB2
+0000c0b6   __BA_IA2
+0000c0b7   __BA_UAB1
+0000c0b8   __BA_IB1
+0000c0b9   __BA_TIME2_4
+0000c0ba   __BA_IC2
+0000c0bb   __BA_UAB0
+0000c0bc   __BA_UBC2
+0000c0bd   __BA_PIONU
+0000c0be   __BA_UBC1
+0000c0bf   __BA_IC1
+0000c0c0   __BA_UBC0
+0000c0c1   __BA_UAB2
+0000c0c2   __RU_TOQT
+0000c0c3   __RU_IQT
+0000c0c4   __RU_AGLT
+0000c0c5   __MIDRF
+0000c0c6   __NIDRF
+0000c0c7   __NIQRF
+0000c0c8   __DEADTIME
+0000c0c9   __SW_FR
+0000c0ca   __COMPTIME
+0000c0cb   __RU_UDCT
+0000c0cc   __MINONTIME
+0000c0cd   __RU_IDT
+0000c0ce   __RESET
+0000c0cf   __SYSRUN
+0000c0d0   __STDBY1
+0000c0d1   __STDBY3
+0000c0d2   __STDBY2
+0000c0d3   __STDBY4
+0000c0d4   __TOQRF
+0000c0d5   __MIQRF
+0000c0d6   __AGLRF
+0000c0d7   __ENCODPOS
+0000c0d8   __EIDCO
+0000c0d9   _RAMDATA_POS
+0000c0da   __MSG_SCOUT1
+0000c0db   __NULL_VAL
+0000c0dc   __MSG_SCOUT2
+0000c0dd   __OUT_AMUX1
+0000c0de   __OUT_AMUX2
+0000c0df   __MC_REV
+0000c0e0   __MC_TYPE
+0000c0e1   __MC_DATE
+0000c0e2   __SCIB_ADDR
+0000c0e3   __MC_ID
+0000c0e4   __EIN
+0000c0e5   _RUN_mpriq
+0000c0e6   __SY_RTRN
+0000c0e7   __OUT3_TEST
+0000c0e8   _SW_NPR
+0000c0e9   __NQEPPCO
+0000c0ea   __NPR_ID_Ki
+0000c0eb   __NPR_ID_Kp
+0000c0ec   __NPR_ID_Kd
+0000c0ed   __NPR_ID_errmax
+0000c0ee   __NPR_ID_outmax
+0000c0ef   __NPR_ID_errmin
+0000c0f0   __NPR_U_Kd
+0000c0f1   __NPR_U_Ki
+0000c0f2   __NPR_U_outmax
+0000c0f3   __NPR_U_errmin
+0000c0f4   __NPR_U_errmax
+0000c0f5   __NPR_U_incrementmax
+0000c0f6   __NPR_IQ_incrementmax
+0000c0f7   __NPR_IQ_errmin
+0000c0f8   __MPR_U_Kp
+0000c0f9   __MPR_U_Kd
+0000c0fa   __MPR_U_Ki
+0000c0fb   __MPR_U_outmax
+0000c0fc   __NPR_IQ_Kp
+0000c0fd   __NPR_ID_incrementmax
+0000c0fe   __NPR_IQ_Ki
+0000c0ff   __NPR_IQ_outmax
+0000c100   __NPR_IQ_Kd
+0000c101   __STDBY5
+0000c102   __SCOUTL
+0000c103   __SCOUTH
+0000c104   __STDBY7
+0000c105   __STDBY6
+0000c106   _SW_MPR
+0000c107   __STDBY8
+0000c108   __NPR_U_Kp
+0000c109   __NPR_IQ_errmax
+0000c10a   __CANOPER
+0000c10b   __OPERATION
+0000c10c   __AUTOCSTAC
+0000c10d   __COMP2
+0000c10e   __ENSCR
+0000c110   _i_cnt2
+0000c112   _i_cnt3
+0000c114   _OCS_Trf
+0000c116   _i_cnt1
+0000c118   _MPPT_cnt
+0000c11a   _GIVE_NPR_Id_pre
+0000c11c   _cnt_Island_F
+0000c11e   _cnt_Island_U
+0000c120   _testtheta
+0000c122   _zys
+0000c124   _Pnactive_pre
+0000c126   _MPPT_Pnactive
+0000c128   _ub_m
+0000c12a   _ua_m
+0000c12c   _u_alfa_NPR
+0000c12e   _uc_m
+0000c130   _ET_SUM1
+0000c132   _ET_SUM2
+0000c134   _m
+0000c136   _vdc
+0000c138   _u_beta_NPR
+0000c13a   _RUN_mpridrf_exi
+0000c13c   _u_beta_MPR
+0000c13e   _u_alfa_MPR
+0000c140   _sum2
+0000c142   __stdby01
+0000c144   __stdby02
+0000c146   _r_value3
+0000c148   _sum1
+0000c14a   _fSum
+0000c14c   __encodpos
+0000c14e   _DM_imrq
+0000c150   _DM_imrd
+0000c152   _Te_feedback
+0000c154   _DM_Lr
+0000c156   __eidco
+0000c158   _POSCNT_TEST
+0000c15a   _Pnreactive
+0000c15c   _Pnactive
+0000c15e   __stdby06
+0000c160   __stdby07
+0000c162   __stdby05
+0000c164   _MPPT_Time
+0000c166   __stdby08
+0000c168   _MPPT_Id
+0000c16a   __stdby04
+0000c16c   _AD_OUT_UDC
+0000c16e   _m_value2
+0000c170   _r_value2
+0000c172   _AD_OUT_UDC_PRO
+0000c174   _m_value1
+0000c176   __stdby03
+0000c178   _r_value1
+0000c17a   _m_value3
+0000c180   _SPI
+0000c186   _B_data
+0000c18c   _A_data
+0000c192   _C_data
+0000c198   _Island
+0000c19e   _RTIMER
+0000c1a4   _ADFINAL
+0000c1ac   _GIVE
+0000c1b4   _PI_NPR_U
+0000c1c0   _PI_MPR_Iq
+0000c1cc   _PI_STA_Id
+0000c1d8   _PI_MPR_U
+0000c1e4   _PI_NPR_Id
+0000c1f0   _PI_NPR_Iq
+0000c200   _PI_STA_Iq
+0000c20c   _PI_MPR_Id
+0000c218   _EEPROM
+0000c226   _PI_PARA_MPRU
+0000c240   _PI_PARA_MPRID
+0000c24e   _PI_PARA_NPRU
+0000c25c   _PI_PARA_DYNID
+0000c26a   _PI_PARA_DYNU
+0000c280   _PI_PARA_MPRI
+0000c28e   _PI_PARA_DYNIQ
+0000c29c   _PI_PARA_STAI
+0000c2aa   _PI_PARA_NPRIQ
+0000c2c0   _PI_PARA_NPRID
+0000c2ce   _PI_PARA_MPRIQ
+0000c2dc   _disp
+0000c2eb   _flag
+0000c300   _addat
+0000c310   _AMUX
+0000c326   _SCI
+0000c340   _CAP3
+0000c35a   _CAP4
+0000c380   _TRS_MPR_I
+0000c39c   _TRS_PSTA_U
+0000c3c0   _TRS_NGS_U
+0000c3dc   _TRS_NPR_U
+0000c400   _TRS_STA_I
+0000c41c   _TRS_MPR_U
+0000c440   _TRS_STA_U
+0000c45c   _DIP_NPR_U
+0000c480   _TRS_NPR_I
+0000c49c   _DIP_NPR_I
+0000c4c0   _DIP_STA_I
+0000c4dc   _DIP_STA_U
+0000c500   _AD
+0000c51c   _TRS_GSTA_U
+0000c540   _TRS_PMPR_I
+0000c55c   _DIP_MPR_I
+0000c580   _QEPDATA
+0000c59e   _exadc
+0000c5c0   _fXn
+0000c600   _AD_OUT_NPR_I
+0000c640   _AD_OUT_NGF_U
+0000c680   _AD_OUT_STA_I
+0000c6c0   _AD_OUT_SCR_I
+0000c700   _MEAN_DATA
+0000c740   _AD_OUT_MPR_I
+0000c780   _AD_OUT_STAD_U
+0000c7c0   _AD_OUT_U
+0000c800   _AD_OUT_I
+0000c840   _AD_OUT_STA_U
+0000c880   _AD_OUT_NGS_U
+0000c8c0   _RUN
+0000c900   _DISP
+0000c940   _SCI_canopen
+0000c980   _D1
+0000c9c0   _C3
+0000ca00   _D3
+0000ca40   _D2
+0000ca80   _A2
+0000cac0   _A1
+0000cb00   _C1
+0000cb40   _A3
+0000cb80   _C2
+0000cbc0   _PRO
+0000cc40   _MAIN_LOOP
+0000ccc0   _TEMP_store2
+0000cd40   _TEMP_store3
+0000cdc0   _TEMP_store1
+0000ce40   _ADdata2
+0000cec0   _ADdata3
+0000cf40   _ADdata1
+0000cfc0   _FFTdata2
+0000d040   _FFTdata3
+0000d0c0   _FFTdata1
+0000d140   _FIRdata2
+0000d1c0   _FIRdata1
+0000d240   _FIRdata3
+0000d2c0   _s
+0000d3c0   _draw2
+0000d500   _draw1
+0000d640   _draw5
+0000d780   _draw6
+0000d8c0   _draw3
+0000da00   _draw4
+0000db2c   __unlock
+0000db2e   __lock
+0000db30   ___TI_cleanup_ptr
+0000db32   ___TI_dtors_ptr
+0000db34   _errno
+0000db40   _ScokInf
+0000db56   _CH395Inf
+0000db80   _MyBuffer
+0000dbe4   _CpuTimer1
+0000dbec   _CpuTimer2
+0000dbf4   _CpuTimer0
+0000dc02   _fir_coeff_LP_0_2_N16
+0000dc60   _fir_coeff_LP_0_1_N16
+0000dc80   _PieVectTableInit
+0000de24   _CH395GWIPAddr
+0000de28   _CH395IPAddr
+0000de2c   _CH395IPMask
+0000de30   _Socket0DesIP
+0000de36   _Socket0DesPort
+0000de37   _Socket0SourPort
+00200000   _ramtest1
+0033fff8   _CsmPwl
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[680 symbols]
